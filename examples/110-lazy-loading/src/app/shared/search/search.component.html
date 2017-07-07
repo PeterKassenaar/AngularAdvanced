@@ -1,0 +1,11 @@
+<div class="md-form form-sm">
+  <i class="fa fa-search prefix"></i>
+  <input type="text"
+         #search
+         (input)="doSearch(search.value)"
+         class="form-control"
+         placeholder="Search...">
+</div>
+<div>
+  {{ searchValue }}
+</div>
