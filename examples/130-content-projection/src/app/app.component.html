@@ -1,0 +1,61 @@
+<!--**********************************-->
+<!--Every component (exept the first one) has some kind of content projection.-->
+<!--Uncomment the contents of each column to see the changes. The files themselves-->
+<!--are in the folders /card1, /card2, etc.-->
+<!--**********************************-->
+
+<div class="container">
+	<!-- First Row -->
+	<div class="row">
+		<div class="col-md-4">
+			<!--Card 1 : No content projection. Simple component and EventEmitter-->
+			<h2>Component: Card 1</h2>
+			<app-card1 (submitted)="onSubmitCard1($event)">
+
+			</app-card1>
+		</div>
+		<div class="col-md-4">
+			<h2>Component: Card 2</h2>
+			<!--Card 2 : title is projected inside the child component-->
+			<!--<app-card2>-->
+				<!--Free life-->
+			<!--</app-card2>-->
+		</div>
+
+		<div class="col-md-4">
+			<!--Card 3 : Title is projected *and* text w/ a specific class is projected-->
+			<h2>Component: Card 3</h2>
+			<!--<app-card3>-->
+				<!--Enjoy nature-->
+				<!--<p class="card-text">Enjoy the outdoor life. Fly like an eagle and get rid of your anger, worries and-->
+					<!--stress.</p>-->
+			<!--</app-card3>-->
+		</div>
+	</div>
+	<!-- /First Row -->
+
+	<!-- Second Row -->
+	<div class="row">
+		<div class="col-md-4">
+			<h2>Component: Card 4</h2>
+			<!--<app-card4>-->
+				<!--<img class="img-fluid card-photo" src="assets/img/photo-04.jpg" alt="Content Projected Photo">-->
+				<!--Hike your path-->
+				<!--<p class="card-text">Get up in the morning, not knowing where you will end up in the evening. Discover-->
+					<!--your world.</p>-->
+			<!--</app-card4>-->
+		</div>
+		<div class="col-md-4">
+			<h2>Component: Card 5</h2>
+			<!--<app-card5>-->
+				<!--&lt;!&ndash; Project component inside this component, bind to event in child component &ndash;&gt;-->
+				<!--<app-newsletter (checked)="onChecked($event)"></app-newsletter>-->
+			<!--</app-card5>-->
+		</div>
+
+		<div class="col-md-4">
+
+		</div>
+	</div>
+	<!--/Second row-->
+</div>

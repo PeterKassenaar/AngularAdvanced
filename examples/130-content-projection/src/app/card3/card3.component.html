@@ -1,0 +1,25 @@
+<!--Card-->
+<div class="card">
+
+  <!--Card image-->
+  <img class="img-fluid" src="assets/img/photo-03.jpg" alt="Mountains and sea">
+  <!--/.Card image-->
+
+  <!--Card content-->
+  <div class="card-block">
+    <!--Title-->
+    <h4 class="card-title">
+      <ng-content></ng-content>
+    </h4>
+    <!--Text-->
+    <ng-content select=".card-text"></ng-content>
+    <hr>
+    <p><em>The title of this card and the text contents are projected. We are using class projection here.</em></p>
+    <button class="btn btn-primary">
+      Learn more
+    </button>
+  </div>
+  <!--/.Card content-->
+
+</div>
+<!--/.Card-->

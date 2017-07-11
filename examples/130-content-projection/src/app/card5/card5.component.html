@@ -1,0 +1,20 @@
+<!--Card-->
+<div class="card">
+
+  <img class="img-fluid" src="assets/img/photo-05.jpg" alt="Boots">
+
+  <div class="card-block">
+
+    <h4 class="card-title">Get the right gear</h4>
+
+    <p class="card-text">Nobody likes walking barefoot in the woods. Get the right gear for your outdoor adventure.</p>
+
+    <!-- nested component, projected from parent component -->
+    <ng-content select="app-newsletter"></ng-content>
+
+    <hr>
+    <p><em>The <strong>Newsletter</strong>-component is projected here (components-in-components). Any newsletter-events are submitted back to the parent.</em></p>
+  </div>
+
+</div>
+<!--/.Card-->

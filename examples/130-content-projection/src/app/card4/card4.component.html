@@ -1,0 +1,25 @@
+<!--Card-->
+<div class="card">
+
+  <!--Card image, projected from parent component-->
+  <ng-content select="img.card-photo"></ng-content>
+  <!--/.Card image-->
+
+  <!--Card content-->
+  <div class="card-block">
+    <!--Title-->
+    <h4 class="card-title">
+      <ng-content></ng-content>
+    </h4>
+    <!--Text-->
+    <ng-content select=".card-text"></ng-content>
+    <hr>
+    <p><em>This card has a projected image, using select="img.classname" in the content-projection section.</em></p>
+    <button class="btn btn-primary">
+      Learn more
+    </button>
+  </div>
+  <!--/.Card content-->
+
+</div>
+<!--/.Card-->
