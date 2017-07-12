@@ -1,0 +1,10 @@
+<h2>List</h2>
+<ul class="list-group">
+	<li class="list-group-item"
+		[class.selected]="city === currentCity"
+		(click)="selectCity(city)"
+		*ngFor="let city of cities | async">
+		{{ city.name }}
+	</li>
+</ul>
+

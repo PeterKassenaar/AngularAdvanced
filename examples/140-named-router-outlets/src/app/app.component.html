@@ -1,0 +1,11 @@
+<div class="container">
+	<!--Main menu-->
+	<a class="btn btn-primary" routerLink="home">Home</a>
+	<a class="btn btn-primary"
+	   [routerLink]="['/cities', {outlets: {'list': ['cityList'], 'detail': ['-1']}}]">
+		Cities
+	</a>
+	<!--Main router outlet. The Cities component has nested router outlets, both with their own name-->
+	<!--Also look in the routing table (app-routing.module.ts), as it has child routes for the different outlets-->
+	<router-outlet></router-outlet>
+</div>

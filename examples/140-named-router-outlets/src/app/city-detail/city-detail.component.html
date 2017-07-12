@@ -1,0 +1,18 @@
+<h2>
+	Details - {{ (city | async)?.name}}
+	<span class="badge pull-right">{{ (city | async)?.id}}</span>
+</h2>
+<div *ngIf="city | async; else loading; let city">
+	<ul class="list-group">
+		<li class="list-group-item">Name: {{ city.name }}</li>
+		<li class="list-group-item">Province: {{ city.province }}</li>
+		<li class="list-group-item">Highlights: {{ city.highlights }}</li>
+	</ul>
+	<img src="assets/img/{{ city.name}}.jpg" alt="Foto van {{ city.name }}" class="img-responsive"/>
+</div>
+<ng-template #loading>
+	<div>
+		<h3>Fetching city...</h3>
+		<img src="assets/img/spinner.gif" alt="loading...">
+	</div>
+</ng-template>

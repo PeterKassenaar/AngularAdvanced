@@ -1,0 +1,10 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="jumbotron">
+			<h1>Named router Outlets</h1>
+			<p>Navigate to the Cities route. This route has two outlets: one for the CityListComponent and one for the
+				CityDetailComponent</p>
+			<a class="btn btn-success btn-lg" [routerLink]="['/cities', {outlets: {'list': ['cityList'], 'detail':['-1']}}]">Go</a>
+		</div>
+	</div>
+</div>
