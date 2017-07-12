@@ -15,7 +15,7 @@
 //city.reducer.ts
 import {Action} from '@ngrx/store';
 
-export const citiesReducer = (state = [], action: Action) => {
+export function citiesReducer(state = [], action: Action) {
 	switch (action.type) {
 		case "ADD_CITY": {
 			// add the payload (= a new city) to the
