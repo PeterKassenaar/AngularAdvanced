@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="col-md-4">
+		<h2>List of cities</h2>
+		<!--Input new city-->
+		<input #newCity
+			   (keyup.enter)="addCity(newCity)"
+			   class="input-lg" placeholder="city name...">
+		<button (click)="addCity(newCity)" class="btn btn-primary">
+			Add city
+		</button>
+		<!--List of current cities-->
+		<ul class="list-group">
+			<li class="list-group-item" *ngFor="let city of cities">
+				<a (click)="editCity(city)">{{city}}</a>
+				<button (click)="removeCity(city)"
+						class="btn btn-sm btn-danger pull-right">
+					Remove
+				</button>
+			</li>
+		</ul>
+		<!--Edit a city-->
+		<div *ngIf="currentCity">
+			<input [value]="currentCity"
+				   #editCity
+				   (keyup.enter)="saveCity(editCity)"
+				   class="input-lg"><br>
+			<button (click)="saveCity(editCity)" class="btn btn-success">
+				Save
+			</button>
+			<button (click)="cancel()" class="btn btn-default">
+				Cancel
+			</button>
+		</div>
+	</div>
+	<div class="col-md-4">
+
+	</div>
+</div>
