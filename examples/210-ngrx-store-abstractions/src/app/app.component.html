@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="col-md-4">
+		<h2>List of cities</h2>
+		<!--Input new city-->
+		<input #newCity
+			   class="input-lg" placeholder="city name...">
+		<input #province
+			   class="input-lg" placeholder="province...">
+		<input #inhabitants type="number"
+			   class="input-lg" placeholder="inhabitants...">
+		<br>
+		<button (click)="addCity(newCity, province, inhabitants)" class="btn btn-primary">
+			Add city
+		</button>
+		<!--List of current cities-->
+		<ul class="list-group">
+			<li class="list-group-item" *ngFor="let city of cities$ | async">
+				{{ city.id }} -
+				<strong>
+					<a (click)="selectCity(city)">{{city.name}}</a>
+				</strong>
+				<button (click)="removeCity(city)"
+						class="btn btn-sm btn-danger pull-right">
+					Remove
+				</button>
+			</li>
+		</ul>
+	</div>
+	<div class="col-md-4">
+		<h2>Selected City</h2>
+		<div *ngIf="selectedCity$ | async; let city" class="jumbotron">
+			<h1>{{ city.name }}</h1>
+			<h2>Province: {{ city.province}}</h2>
+			<p>Population: {{ city.inhabitants }}</p>
+			<button class="btn btn-primary" (click)="clear()">Clear</button>
+		</div>
+	</div>
+</div>
