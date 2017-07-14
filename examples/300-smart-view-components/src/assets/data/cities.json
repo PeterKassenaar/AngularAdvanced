@@ -1,0 +1,37 @@
+[
+  {
+	"id"        : 1,
+	"name"      : "Groningen",
+	"province"  : "Groningen",
+	"visited"    : false,
+	"highlights": "Martinitoren"
+  },
+  {
+	"id"        : 2,
+	"name"      : "Hengelo",
+	"province"  : "Overijssel",
+	"visited"    : false,
+	"highlights": "Stadhuis"
+  },
+  {
+	"id"        : 3,
+	"name"      : "Den Haag",
+	"province"  : "Zuid-Holland",
+	"visited"    : false,
+	"highlights": "Binnenhof"
+  },
+  {
+	"id"        : 4,
+	"name"      : "Enschede",
+	"province"  : "Grote Markt",
+	"visited"    : false,
+	"highlights": "Twentse Welle museum"
+  },
+  {
+	"id"        : 5,
+	"name"      : "Heerlen",
+	"province"  : "Limburg",
+	"visited"    : false,
+	"highlights": "Mijnbouwmuseum"
+  }
+]

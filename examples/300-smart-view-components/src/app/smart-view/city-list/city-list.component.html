@@ -1,0 +1,11 @@
+<ul class="list-group">
+	<li *ngFor="let city of cities"
+		class="list-group-item"
+		[class.visited]="city.visited"
+		(click)="selectCity.emit(city)">
+		{{ city.id}} - {{ city.name }}
+		<city-visited [visited]="city.visited"
+					  (toggle)="city.visited = $event; toggleVisited.emit(city)">
+		</city-visited>
+	</li>
+</ul>

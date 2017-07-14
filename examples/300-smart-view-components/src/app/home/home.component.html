@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col-md-6">
+		<h2>Default component- My favorite cities:</h2>
+		<ul class="list-group">
+			<li *ngFor="let city of cities"
+				class="list-group-item"
+				[class.visited]="city.visited"
+				(click)="getCity(city)">
+				{{ city.id}} - {{ city.name }}
+				<span class="pull-right">
+					<label>
+						<input type="checkbox"
+							   class="checkbox-inline"
+							   [checked]="city.visited"
+							   (click)="toggleCity(city)"> Visited
+					</label>
+				</span>
+			</li>
+		</ul>
+		<hr>
+		<div *ngIf="currentCity">
+			<h2>Current city: {{ currentCity.name }}</h2>
+			<img class="cityPhoto img-responsive"
+				 [src]="cityPhoto" alt="Foto van {{ currentCity.name}}">
+		</div>
+	</div>
+	<div class="col-md-4">
+		<h2>I Visited: </h2>
+		<ul class="list-group">
+			<li class="list-group-item" *ngFor="let city of visitedCities">
+				{{ city.name }}
+			</li>
+		</ul>
+	</div>
+</div>

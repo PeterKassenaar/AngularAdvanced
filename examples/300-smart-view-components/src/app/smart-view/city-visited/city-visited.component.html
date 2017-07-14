@@ -1,0 +1,8 @@
+<span class="pull-right">
+	<label>
+		<input type="checkbox"
+			   class="checkbox-inline"
+			   [checked]="visited"
+			   (change)="visited = !visited; toggle.emit(visited)"> Visited
+	</label>
+</span>
