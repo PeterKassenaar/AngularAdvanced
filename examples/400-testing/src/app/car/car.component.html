@@ -1,0 +1,4 @@
+<h1>My cars: </h1>
+<p *ngFor="let car of cars" (click)="selectCar(car)">
+  - {{ car.make}} {{ car.model}}, {{ car.year}} ({{ car.numWheels}} wheels)
+</p>

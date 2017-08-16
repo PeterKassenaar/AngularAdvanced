@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
+import {Dispatcher, Store} from '@ngrx/store';
 import {ACTIONS} from './core/city.actions';
 import {AppState} from './core/appstate.interface';
 import {City} from './core/city.model';
@@ -16,13 +16,17 @@ export class AppComponent implements OnInit {
 	selectedCity$: Observable<City>;
 
 	constructor(private store: Store<AppState>,
-				private cityService: CityService) {
+				private cityService: CityService,
+				private dispatcher: Dispatcher) {
 	}
 
 	ngOnInit() {
 		this.cities$       = this.cityService.cities$;
 		this.selectedCity$ = this.store.select(s => s.selectedCity); // talk to store directly. No problem, b/c this is a completely synchronous operation.
 		this.cityService.loadCities();
+		// subscribe to the dispatcher
+		// this.dispatcher.filter(action => action.type === ACTIONS.REMOVE_CITY)
+		// 	.subscribe(()=> console.log('City removed') )
 	}
 
 	addCity(city: HTMLInputElement, province: HTMLInputElement, inhabitants: HTMLInputElement) {
