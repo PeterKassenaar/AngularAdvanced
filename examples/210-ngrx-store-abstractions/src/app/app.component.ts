@@ -23,22 +23,24 @@ export class AppComponent implements OnInit {
 	ngOnInit() {
 		this.cities$       = this.cityService.cities$;
 		this.selectedCity$ = this.store.select(s => s.selectedCity); // talk to store directly. No problem, b/c this is a completely synchronous operation.
-		this.cityService.loadCities();
+		this.cityService.loadCities(); // initial setup of cities. Could also be done inside constructor() of the service.
 		// subscribe to the dispatcher
 		// this.dispatcher.filter(action => action.type === ACTIONS.REMOVE_CITY)
 		// 	.subscribe(()=> console.log('City removed') )
 	}
 
-	addCity(city: HTMLInputElement, province: HTMLInputElement, inhabitants: HTMLInputElement) {
+	addCity(city: HTMLInputElement,
+			province: HTMLInputElement,
+			population: HTMLInputElement) {
 		// add new city to store via the service
 		this.cityService.addCity(
 			new City(
 				this.getRandomId(),
 				city.value,
 				province.value,
-				+inhabitants.value)
+				+population.value)
 		);
-		city.value = province.value = inhabitants.value = '';
+		city.value = province.value = population.value = '';
 		city.focus();
 	}
 

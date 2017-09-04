@@ -6,10 +6,10 @@
 			   class="input-lg" placeholder="city name...">
 		<input #province
 			   class="input-lg" placeholder="province...">
-		<input #inhabitants type="number"
-			   class="input-lg" placeholder="inhabitants...">
+		<input #population type="number"
+			   class="input-lg" placeholder="population...">
 		<br>
-		<button (click)="addCity(newCity, province, inhabitants)" class="btn btn-primary">
+		<button (click)="addCity(newCity, province, population)" class="btn btn-primary">
 			Add city
 		</button>
 		<!--List of current cities-->
@@ -31,7 +31,7 @@
 		<div *ngIf="selectedCity$ | async; let city" class="jumbotron">
 			<h1>{{ city.name }}</h1>
 			<h2>Province: {{ city.province}}</h2>
-			<p>Population: {{ city.inhabitants }}</p>
+			<p>Population: {{ city.population }}</p>
 			<button class="btn btn-primary" (click)="clear()">Clear</button>
 		</div>
 	</div>
