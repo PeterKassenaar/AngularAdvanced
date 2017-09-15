@@ -1,0 +1,8 @@
+<!--Fetch a list of cities from Fireabse -->
+<h1>List of Cities from Firebase</h1>
+<ul class="list-group">
+	<li class="list-group-item"
+		*ngFor="let city of cities$ | async">
+		{{ city.id}} - {{ city.name}}
+	</li>
+</ul>
