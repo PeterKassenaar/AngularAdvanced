@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-md-6">
+		<h2 class="label-info">Add a city</h2>
+		<!--Simple form to add a city. NO VALIDATION AT THIS MOMENT!-->
+		<label>
+			<input type="text" #cityName class="input-lg" placeholder="City name...">
+		</label>
+		<label>
+			<input type="text" #cityProvince class="input-lg" placeholder="Province...">
+		</label>
+		<label>
+			<input type="text" #cityHighlights class="input-lg" placeholder="Highlights...">
+		</label>
+		<hr>
+		<button class="btn btn-success"
+				(click)="addCity(cityName.value, cityProvince.value, cityHighlights.value)">
+			<i class="fa fa-save"></i>
+			Save
+		</button>
+		<button class="btn btn-default"
+			(click)="cancel()">
+			<i class="fa fa-undo"></i>
+			Cancel
+		</button>
+	</div>
+</div>
