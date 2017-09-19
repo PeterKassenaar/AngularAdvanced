@@ -1,0 +1,46 @@
+<!--Fetch a list of cities from Firebase -->
+<div class="row">
+	<div class="col-md-6">
+		<h2 class="label-info">List of Cities from Firebase</h2>
+		<ul class="list-group">
+			<li class="list-group-item"
+				*ngFor="let city of cities$ | async ">
+				{{ city.id}} - {{ city.name }}
+
+				<button *ngIf="user$ | async"
+						(click)="visited(city)"
+						class="btn btn-sm btn-info pull-right">
+					<i class="fa fa-automobile"></i>
+					Visited!
+				</button>
+				<button *ngIf="user$ | async"
+						(click)="remove(city)"
+						class="btn btn-sm btn-danger pull-right">
+					<i class="fa fa-remove"></i>
+				</button>
+				<a *ngIf="user$ | async"
+				   [routerLink]="['/edit', city.$key]"
+				   class="btn btn-sm btn-success pull-right">
+					<i class="fa fa-edit"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="col-md-6">
+		<!--List with visited cities-->
+		<h2 class="label-info">I've been to these cities:</h2>
+		<ul class="list-group">
+			<li class="list-group-item"
+				*ngFor="let city of visitedCities$ | async ">
+				{{ city.id}} - {{ city.name }}
+
+				<button *ngIf="user$ | async"
+						(click)="notVisited(city)"
+						class="btn btn-sm btn-info pull-right">
+					<i class="fa fa-remove"></i>
+					Nope, haven't been there!
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<!--This is basically the same UI as in AddComponent.html. In a real life -->
+<!--case you would probably use a single form w/ content projection for this-->
+<div class="row">
+	<div class="col-md-6">
+		<h2 class="label-info">Edit a city</h2>
+		<!--Simple form to add a city. NO VALIDATION AT THIS MOMENT!-->
+			<label>
+				<input type="text" [value]="(city$|async)?.name"
+					   (input)="update($event.target.value, 'name')"
+					   class="input-lg" placeholder="City name...">
+			</label>
+			<label>
+				<input type="text" [value]="(city$|async)?.province"
+					   (input)="update($event.target.value, 'province')"
+					   class="input-lg"
+					   placeholder="Province...">
+			</label>
+			<label>
+				<input type="text" [value]="(city$|async)?.highlights"
+					   (input)="update($event.target.value, 'highlights')"
+					   class="input-lg"
+					   placeholder="Highlights...">
+			</label>
+			<hr>
+			<button class="btn btn-success"
+					(click)="back()">
+				<i class="fa fa-save"></i>
+				Back
+			</button>
+	</div>
+</div>
