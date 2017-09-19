@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AuthService} from './shared/services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
 	selector   : 'app-root',
@@ -7,14 +8,18 @@ import {AuthService} from './shared/services/auth.service';
 })
 export class AppComponent {
 
-	constructor(public authService:AuthService){
-
+	constructor(public authService: AuthService,
+				private router: Router) {
 	}
 
-	login(){
+	// Use anonymous login for now.
+	login() {
 		this.authService.login();
 	}
-	logout(){
+
+	// Logout and navigate back to home page
+	logout() {
 		this.authService.logout();
+		this.router.navigate(['/']);
 	}
 }

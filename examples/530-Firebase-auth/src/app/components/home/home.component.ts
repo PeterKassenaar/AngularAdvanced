@@ -10,6 +10,7 @@ import {AuthService} from '../../shared/services/auth.service';
 })
 export class HomeComponent implements OnInit {
 	cities$: FirebaseListObservable<City[]>;
+
 	// wire up with user variable in AuthService
 	user$ = this.authService.user;
 
