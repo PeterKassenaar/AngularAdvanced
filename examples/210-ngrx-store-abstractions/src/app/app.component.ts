@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
 	ngOnInit() {
 		this.cities$       = this.cityService.cities$;
 		this.selectedCity$ = this.store.select(s => s.selectedCity); // talk to store directly. No problem, b/c this is a completely synchronous operation.
-		this.cityService.loadCities(); // initial setup of cities. Could also be done inside constructor() of the service.
+		this.cityService.loadCities(); // initial setup of cities.
+		// Could also be done inside constructor() of the service.
 		// subscribe to the dispatcher
 		// this.dispatcher.filter(action => action.type === ACTIONS.REMOVE_CITY)
 		// 	.subscribe(()=> console.log('City removed') )

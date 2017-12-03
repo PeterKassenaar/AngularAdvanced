@@ -14,7 +14,7 @@ import {AppComponent} from './app.component';
 	],
 	imports     : [
 		BrowserModule,
-		StoreModule.provideStore({citiesReducer})
+		StoreModule.forRoot({citiesReducer})
 	],
 	bootstrap   : [AppComponent]
 })

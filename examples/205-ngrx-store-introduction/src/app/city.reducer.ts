@@ -1,7 +1,21 @@
+
+//city.reducer.ts
+//import {Action} from '@ngrx/store';
+
 // Here, 'cities' is our reducer.
 // It is a function which takes a state and an action and returns a new state.
 // If you use store.select('cities') in your application,
 // it actually looks for this reducer!
+
+// PAY ATTENTION: In @ngrx/store v4.0.0 and above, there is no .payload property anymore
+// on the Action Type. We added it here manually to get the current code working.
+// This will change on a later date, as we update our example code. For now it just works ;-)
+// See more in this post: https://blog.angular.io/announcing-ngrx-4-87df0eaa2806
+
+import {Action as NgRxAction} from '@ngrx/store';
+export interface Action extends NgRxAction {
+	payload?: any;
+}
 
 /*
 * what is an action? It is an object with a type and a paylod.
@@ -12,8 +26,8 @@
 * }
 * */
 
-//city.reducer.ts
-import {Action} from '@ngrx/store';
+
+
 
 export function citiesReducer(state = [], action: Action) {
 	switch (action.type) {
