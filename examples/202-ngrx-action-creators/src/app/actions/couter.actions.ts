@@ -1,4 +1,6 @@
 // counter.actions.ts
+
+// import Action interface for static typing later on
 import {Action} from '@ngrx/store';
 
 // *** Action constants
@@ -15,7 +17,7 @@ export const RESET = '[COUNTER] - reset';
 // add it back in ourselves.
 export class CounterIncrement implements Action {
   readonly type = INCREMENT;
-  constructor(public payload?: any) {}
+  constructor(public payload?: number) {}
 }
 
 export class CounterDecrement implements Action {
@@ -26,4 +28,5 @@ export class CounterReset implements Action {
   readonly type = RESET;
 }
 
-export type All = CounterIncrement | CounterDecrement | CounterReset;
+//export action types, so they can be used in the reducers
+export type CounterAction = CounterIncrement | CounterDecrement | CounterReset;

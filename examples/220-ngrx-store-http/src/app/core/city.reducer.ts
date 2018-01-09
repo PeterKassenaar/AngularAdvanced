@@ -42,7 +42,7 @@ const citiesReducer = (state = [], action: Action): City[] => {
             if (index !== -1) {
                 state[index] = action.payload['newValue'];
             }
-            return Array.prototype.concat(state);
+            return [...state];
         }
         default: {
             // return unaltered state
