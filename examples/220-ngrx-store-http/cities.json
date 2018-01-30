@@ -29,6 +29,12 @@
       "name": "Heerlen",
       "province": "Limburg",
       "inhabitants": 67000
+    },
+    {
+      "id": 7219,
+      "name": "test",
+      "province": "test",
+      "inhabitants": 0
     }
   ]
 }
