@@ -1,5 +1,5 @@
 // counter.ts - a simple reducer, now with abstracted Counter Actions
-import * as fromActions from '../actions/couter.actions';
+import * as fromActions from '../actions/counter.actions';
 
 // create initial State. Not mandatory (can easily be defined inside the parameterlist of reducer),
 // but gives you flexibility in the future, if the state expands.

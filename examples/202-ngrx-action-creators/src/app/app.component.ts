@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 import {AppState} from './appState';
-import * as fromActions from './actions/couter.actions';
+import * as fromActions from './actions/counter.actions';
 
 @Component({
   selector: 'app-root',

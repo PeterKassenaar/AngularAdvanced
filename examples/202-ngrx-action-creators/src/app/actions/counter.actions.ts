@@ -14,7 +14,7 @@ export const RESET = '[COUNTER] - reset';
 // This way we don't have to manually add the type and payload every time in
 // the reducers and actions. We simply new up (instantiate) the CounterIncrement class.
 // And also - in @ngrx/store v.4 and above, the payload property is gone. We now
-// add it back in ourselves.
+// add it back in ourselves as an optional parameter.
 export class CounterIncrement implements Action {
   readonly type = INCREMENT;
   constructor(public payload?: number) {}
