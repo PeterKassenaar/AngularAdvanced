@@ -1,14 +1,19 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+
+// Store stuff
 import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
-// reducer
-import {appReducer} from './core/city.reducer';
 
-// component
+// Reducers
+import {appReducer} from './reducers/reducers';
+// Services
+import {CityService} from './services/city.service';
+
+// Components
 import {AppComponent} from './app.component';
-import {CityService} from './core/city.service';
 
 @NgModule({
 	declarations: [
@@ -16,8 +21,11 @@ import {CityService} from './core/city.service';
 	],
 	imports     : [
 		BrowserModule,
-		HttpModule,
-		StoreModule.provideStore(appReducer)
+		HttpClientModule,
+		StoreModule.forRoot(appReducer), // combined reducers
+		StoreDevtoolsModule.instrument({
+			maxAge: 10
+		}) // Redux Devtools debugging in Chrome
 	],
 	providers   : [CityService],
 	bootstrap   : [AppComponent]

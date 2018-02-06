@@ -3,6 +3,5 @@ export class City {
 				public name: string     = 'unknown',
 				public province: string = 'unknown',
 				public  inhabitants?: number) {
-
 	}
 }
