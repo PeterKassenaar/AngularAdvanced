@@ -28,4 +28,11 @@ export class CitiesEffects {
 					)
 			})
 		)
+
+	// TODO: Add effect for Adding and Removing a City
+	// @Effect()
+	// addCity$ = ...
+
+	// @Effect()
+	// removeCity$ = ...
 }
