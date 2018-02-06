@@ -1,6 +1,5 @@
 <div class="container">
 	<div class="col-md-4">
-		<h2>List of cities</h2>
 		<!--Input new city-->
 		<input #newCity
 			   (keyup.enter)="addCity(newCity)"
@@ -8,19 +7,28 @@
 		<button (click)="addCity(newCity)" class="btn btn-primary">
 			Add city
 		</button>
+	</div>
+	<div class="col-md-4">
+		<h2>List of cities</h2>
+		<button class="btn btn-success"
+				(click)="loadCities()">Load initial list of cities</button>
 		<!--List of current cities-->
 		<ul class="list-group">
-			<li class="list-group-item" *ngFor="let city of cities">
-				<a (click)="editCity(city)">{{city}}</a>
+			<li class="list-group-item"
+				*ngFor="let city of cities$ | async">
+				<a (click)="editCity(city)">{{city | json }}</a>
 				<button (click)="removeCity(city)"
 						class="btn btn-sm btn-danger pull-right">
 					Remove
 				</button>
 			</li>
 		</ul>
+
+	</div>
+	<div class="col-md-4">
 		<!--Edit a city-->
 		<div *ngIf="currentCity">
-			<input [value]="currentCity"
+			<input value="TODO..."
 				   #editCity
 				   (keyup.enter)="saveCity(editCity)"
 				   class="input-lg"><br>
@@ -31,8 +39,5 @@
 				Cancel
 			</button>
 		</div>
-	</div>
-	<div class="col-md-4">
-
 	</div>
 </div>
