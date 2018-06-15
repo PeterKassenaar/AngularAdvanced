@@ -28,7 +28,7 @@ export class CityService {
 		).pipe(
 			catchError(err => {
 				console.log(err);
-				throw err.json();
+				throw err;
 			})
 		)
 	}

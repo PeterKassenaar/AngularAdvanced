@@ -22,7 +22,7 @@ export class CitiesEffects {
 						map((cities: City[]) => new cityActions.LoadCities(cities)), // 3. Dispatch new action this one will dispatch the new action by default. Use @Effect({dispatch: false}) if the effect should not auto-dispatch
 						catchError(err => {
 							console.log(err);
-							throw err.json();	// 4. Optional (but best practice): catch errors
+							throw err;	// 4. Optional (but best practice): catch errors
 							// Normally you would do something like new cityActions.LoadCitiesFail(err), to catch the error in the store. TODO!
 						})
 					)
