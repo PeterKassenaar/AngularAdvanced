@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Angular Elements - Calculator</title>
+  <script src="elements.js"></script>
+</head>
+
+<body>
+  <h2>Angular Elements Calculator</h2>
+  <pk-calc value1="100" value2="20" show="false"></pk-calc>
+  <h2 id="result"></h2>
+
+  <!-- handle Output() event from custom element -->
+  <script>
+    const calculator = document.querySelector('pk-calc');
+    calculator.addEventListener('calc', res => {
+      console.log('Event received ::', res);
+      document.getElementById('result').innerHTML = res;
+    })
+  </script>
+</body>
+
+</html>
