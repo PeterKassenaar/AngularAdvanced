@@ -1,0 +1,6 @@
+<h2>My list of awesome cities</h2>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let city of cities$ | async">
+    {{ city.id}} - {{ city.name }}
+  </li>
+</ul>
