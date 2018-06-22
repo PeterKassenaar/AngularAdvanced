@@ -1,14 +1,18 @@
 // app.module.ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { environment } from '../environments/environment';
 
-import { AppComponent } from './app.component';
+// Store stuff
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { RouterModule, Routes } from '@angular/router';
-import { UsersModule } from './users/users.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
+
+// Router stuff
+import { RouterModule, Routes } from '@angular/router';
+
+// Component
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'counter', pathMatch: 'full' },

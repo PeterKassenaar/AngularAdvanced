@@ -1,4 +1,4 @@
-// counter-store.reducer
+// counter-store.reducer.ts
 import * as fromActions from './counter-store.actions';
 
 // create initial State. Not mandatory (can easily be defined inside the parameterlist of reducer),

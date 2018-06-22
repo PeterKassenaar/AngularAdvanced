@@ -6,8 +6,7 @@ import { CounterState } from '../counter-store/counter-store.reducer';
 
 @Component({
   selector: 'app-counter',
-  templateUrl: './counter.component.html',
-  styleUrls: ['./counter.component.css']
+  templateUrl: './counter.component.html'
 })
 export class CounterComponent implements OnInit {
   title = 'Store App - with Feature modules and partial stores';

@@ -22,5 +22,5 @@ export class CounterReset implements Action {
   readonly type = RESET;
 }
 
-//export action types, so they can be used in the reducers
+// Export action types, so they can be used in the reducers
 export type CounterAction = CounterIncrement | CounterDecrement | CounterReset;
