@@ -27,4 +27,7 @@ export const getCityEntities = createSelector(
 // selector *there* and not bother with this.
 // (credits:http://ngxsolutions.azurewebsites.net/understanding-features-in-ngrx-4/)
 
+// See also this article by Todd Motto on the subject:
+// https://toddmotto.com/ngrx-store-understanding-state-selectors
+
 // Now look in the cities.component.ts and see how this getCityEntities is used.

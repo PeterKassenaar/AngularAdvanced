@@ -1,8 +1,9 @@
 // cities-store.reducer.ts
 import * as fromCityActions from './cities-store.actions';
 import { City } from '../model/city.model';
-// AppState for the City Feature Module. - Can also be placed in
-// a separate file. It is now inside the reducer for convenience
+// AppState for the City Feature Module (hence we call it CityState).
+// - Can also be placed in a separate file.
+// It is now inside the reducer for convenience.
 export interface CityState {
   cities: City[];
   loading: boolean;
