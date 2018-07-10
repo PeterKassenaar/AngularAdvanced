@@ -11,9 +11,10 @@ const routes: Routes = [{ path: '', component: CounterComponent }];
 @NgModule({
   imports: [
     CommonModule,
+    // Create the child routes for this module
     RouterModule.forChild(routes),
 
-    // Crate the feature store for this module!
+    // Create the feature store for this module!
     StoreModule.forFeature('counter', counterReducer)
   ],
   declarations: [CounterComponent]

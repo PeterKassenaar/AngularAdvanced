@@ -9,6 +9,7 @@
     "e2e": "ng e2e",
     "build": "ng build --prod --output-hashing=none",
     "package": "cat dist/elements-calc/{runtime,polyfills,scripts,main}.js | gzip > elements.js.gz",
+    "package:win": "type runtime.js polyfills.js scripts.js main.js > elements.js",
     "serve": "http-server --gzip"
   },
   "private": true,

@@ -19,7 +19,7 @@
     const calculator = document.querySelector('pk-calc');
     calculator.addEventListener('calc', res => {
       console.log('Event received ::', res);
-      document.getElementById('result').innerHTML = res;
+      document.getElementById('result').innerHTML = res.detail;
     })
   </script>
 </body>
