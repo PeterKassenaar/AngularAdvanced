@@ -5,7 +5,7 @@ import { Actions, Effect } from '@ngrx/effects';
 import { HttpClient } from '@angular/common/http';
 import { City } from '../model/city.model';
 import * as fromCityActions from './cities-store.actions';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap, tap, catchError, delay } from 'rxjs/operators';
 
 @Injectable()
 export class CitiesStoreEffects {
@@ -14,10 +14,17 @@ export class CitiesStoreEffects {
 
   @Effect()
   fetchCities$ = this.action$.ofType(fromCityActions.LOAD_CITIES).pipe(
+    // delay(2000),
     switchMap(() => {
+      // This could also be done in a separate service. TODO.
       return this.http.get<City[]>('http://localhost:3000/cities');
     }),
     tap(res => console.log(res)),
-    map((res: City[]) => new fromCityActions.LoadCitiesComplete(res))
+    map((res: City[]) => new fromCityActions.LoadCitiesComplete(res)),
+    catchError(err => {
+      console.log('ERROR : did you forget to start json-server?');
+      // Dispatch an action like new fromCityActions.LoadCitiesFail(), TODO.
+      throw err;
+    })
   );
 }

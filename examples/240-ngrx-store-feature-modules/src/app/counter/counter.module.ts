@@ -12,6 +12,8 @@ const routes: Routes = [{ path: '', component: CounterComponent }];
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+
+    // Crate the feature store for this module!
     StoreModule.forFeature('counter', counterReducer)
   ],
   declarations: [CounterComponent]

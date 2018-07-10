@@ -7,12 +7,7 @@
   <button class="btn btn-danger" (click)="reset()">Reset Counter</button>
 
   <div style="margin-top: 40px;">
-    <input type="number"
-           class="input-lg"
-           placeholder="number..."
-           (keyup.enter)="addNumber(txtNumber.value)"
-           #txtNumber>
+    <input type="number" class="form-control-lg" placeholder="number..." (keyup.enter)="addNumber(txtNumber.value)" #txtNumber>
   </div>
-  <!--Extra component, also subscribed to the store-->
-  <!--<app-extra></app-extra>-->
+
 </div>
