@@ -13,11 +13,13 @@ export class UserStoreEffects {
   @Effect()
   fetchUsers$ = this.action$.ofType(userActions.LOAD_USERS).pipe(
     switchMap(() => {
+      // again, not using a service at this time. We *should do that.
       return this.http.get<{ info: any; results: User[] }>(
         'https://randomuser.me/api/?results=10&seed=abc'
       );
     }),
     tap(res => console.log(res)),
+    // dispatch the new action from the @Effect()
     map(res => new userActions.LoadUsersComplete(res.results))
   );
 }

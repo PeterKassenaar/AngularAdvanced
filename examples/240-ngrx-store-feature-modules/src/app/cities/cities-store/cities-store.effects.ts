@@ -16,14 +16,14 @@ export class CitiesStoreEffects {
   fetchCities$ = this.action$.ofType(fromCityActions.LOAD_CITIES).pipe(
     // delay(2000),
     switchMap(() => {
-      // This could also be done in a separate service. TODO.
+      // TODO: This could also be done in a separate service.
       return this.http.get<City[]>('http://localhost:3000/cities');
     }),
     tap(res => console.log(res)),
     map((res: City[]) => new fromCityActions.LoadCitiesComplete(res)),
     catchError(err => {
       console.log('ERROR : did you forget to start json-server?');
-      // Dispatch an action like new fromCityActions.LoadCitiesFail(), TODO.
+      // TODO: Dispatch an action like new fromCityActions.LoadCitiesFail().
       throw err;
     })
   );

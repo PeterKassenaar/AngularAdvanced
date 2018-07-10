@@ -17,6 +17,8 @@ export class CitiesComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new fromCityActions.LoadCities());
+    // Here, we use the feature selector to select specific
+    // slices of the complete State.
     this.cities$ = this.store.select(fromCityStore.getCityEntities);
   }
 }

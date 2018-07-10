@@ -38,7 +38,7 @@ export function citiesReducer(
   }
 } // end citiesReducer
 
-// Here, wecreate a *selector*. Otherwise, the complete state (including the 'loading' flag)
+// Here, we create a * state selector*. Otherwise, the complete state (including the 'loading' flag)
 // would be returned upon selection. So we're creating a function here that takes an
 // object of type CityState and returns the .cities property from that object.
 // The function is called in cities.store.ts. Look up that file!
