@@ -1,0 +1,11 @@
+<!--Fetch cities from firebase and show in the UI.-->
+<div class="container">
+  <h1>List of Cities from Firebase</h1>
+  <ul class="list-group">
+    <li class="list-group-item"
+        *ngFor="let city of cities$ | async">
+      <h3>{{ city.name}}</h3>
+      {{city.province}}
+    </li>
+  </ul>
+</div>
