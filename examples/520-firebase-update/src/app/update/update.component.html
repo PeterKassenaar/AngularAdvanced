@@ -1,0 +1,32 @@
+<h2 class="alert-info">Update a city</h2>
+<!--Simple form to update a city. NO VALIDATION AT THIS MOMENT!-->
+<div *ngIf="city$ | async as city">
+  <!--  Used separate local template variables here. We could have also used [(ngModel)]-->
+  <div>
+    <input type="text" #cityName [value]="city.name" class="form-control-lg" placeholder="City name...">
+  </div>
+  <div>
+    <input type="text" #cityProvince [value]="city.province" class="form-control-lg" placeholder="Province...">
+  </div>
+  <div>
+    <input type="text" #cityHighlights [value]="city.highlights" class="form-control-lg"
+           placeholder="Highlights (comma separated)...">
+  </div>
+  <div>
+    <input type="number" #cityRating [value]="city.rating" class="form-control-lg">
+  </div>
+  <hr>
+  <div *ngIf="added" class="alert alert-success" role="alert">
+    City updated!
+  </div>
+  <button class="btn btn-success"
+          (click)="updateCity(cityName.value, cityProvince.value, cityHighlights.value, +cityRating.value)">
+    <i class="fa fa-save"></i>
+    Save
+  </button>
+  <button class="btn btn-default"
+          (click)="cancel()">
+    <i class="fa fa-undo"></i>
+    Cancel
+  </button>
+</div>

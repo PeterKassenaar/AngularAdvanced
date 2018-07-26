@@ -2,6 +2,16 @@
 
 Labs, exercises and example code on the training Angular Advanced by Peter Kassenaar
 
+## Contents
+- 1xx - Modules and Routing
+- 2xx - @ngrx/store
+- 3xx - Advanced components
+- 4xx - Testing
+- 5xx - Firebase
+- 6xx - Angular Elements
+- 8xx - Change Detection 
+- 9xx - Deprecated, used for older versions
+
 ## Some links that might be useful
 
 These were used during the training, I find them useful.
