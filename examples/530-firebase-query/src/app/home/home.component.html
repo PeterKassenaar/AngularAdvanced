@@ -1,0 +1,23 @@
+<!--Fetch cities from firebase and show in the UI.-->
+<h1 class="alert-info">List of Cities from Firebase</h1>
+<h4>Sort on (simple):</h4>
+<button class="btn btn-sm btn-outline-dark" (click)="sort('name')">Name</button>
+<button class="btn btn-sm btn-outline-dark" (click)="sort('province')">Province</button>
+<button class="btn btn-sm btn-outline-dark" (click)="sort('rating')">Rating</button>
+<h4>Sort on (via observable):</h4>
+<button class="btn btn-sm btn-outline-dark" (click)="sortObservable('name')">Name</button>
+<button class="btn btn-sm btn-outline-dark" (click)="sortObservable('province')">Province</button>
+<button class="btn btn-sm btn-outline-dark" (click)="sortObservable('rating')">Rating</button>
+<ul class="list-group">
+  <li class="list-group-item"
+      *ngFor="let city of cities$ | async">
+    <h3>{{ city.name}}</h3>
+    {{city.province}}
+    <span class="badge badge-info">{{ city.rating }}</span>
+    <em class="fa fa-trash pull-right" (click)="removeCity(city.id)"></em>
+    <a [routerLink]="['/update', city.id]">
+      <em class="fa fa-edit pull-right"></em>
+    </a>
+  </li>
+</ul>
+
