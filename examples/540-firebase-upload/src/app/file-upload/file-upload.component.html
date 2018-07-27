@@ -1,0 +1,40 @@
+<div class="dropzone"
+     dropZone
+     (hovered)="toggleHover($event)"
+     (dropped)="startUpload($event)"
+     [class.hovering]="isHovering">
+  <h3>Drag and drop an image here</h3>
+  <!--For mobile devices, that don't support drag/drop-->
+  <div class="custom-file">
+    <input type="file" (change)="startUpload($event.target.files)"
+           class="custom-file-input" id="customFile">
+    <label class="custom-file-label" for="customFile">Or choose an image</label>
+  </div>
+</div>
+
+<!--Show Progress bar-->
+<div *ngIf="percentage | async as pct">
+  <progress [value]="pct" max="100"></progress>
+</div>
+
+<!--Show bytes transferred-->
+<div *ngIf="(snapshot | async) as snap">
+  {{ snap.bytesTransferred }}
+
+
+  <!--Show download URL and picture-->
+  <div *ngIf="(downloadUrl | async) as url">
+    <h3>Your image:</h3>
+    <img [src]="url" alt="">
+    <p>
+      <a [href]="url">Download</a>
+    </p>
+  </div>
+
+
+  <!--Buttons to manipulate the upload progress-->
+  <button class="btn btn-primary" (click)="task.pause()" [disabled]="!isActive(snap)">Pause</button>
+  <button class="btn btn-danger" (click)="task.cancel()" [disabled]="!isActive(snap)">Cancel</button>
+  <button class="btn btn-warning" (click)="task.resume()" [disabled]="!(snap?.state === 'paused')">Resume</button>
+
+</div>
