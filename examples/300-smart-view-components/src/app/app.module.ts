@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 // custom
 import {AppRoutingModule} from './app-routing.module';
@@ -24,7 +24,7 @@ import { CityVisitedComponent } from './smart-view/city-visited/city-visited.com
 	imports     : [
 		BrowserModule,
 		AppRoutingModule,
-		HttpModule
+		HttpClientModule
 	],
 	providers   : [CityService],
 	bootstrap   : [AppComponent]
