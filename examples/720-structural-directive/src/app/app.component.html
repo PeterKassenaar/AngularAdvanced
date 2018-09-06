@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>My Custom Carousel</h1>
+  <div *carousel="let image from images; let ctrl = controller">
+    <img [src]="image">
+    <button class="btn btn-primary" (click)="ctrl.prev()">Previous</button>
+    <button class="btn btn-primary" (click)="ctrl.next()">Next</button>
+  </div>
+</div>
