@@ -9,6 +9,7 @@ Labs, exercises and example code on the training Angular Advanced by Peter Kasse
 - 4xx - Testing
 - 5xx - Firebase
 - 6xx - Angular Elements
+- 7xx - Miscellaneous concepts
 - 8xx - Change Detection 
 - 9xx - Deprecated, used for older versions
 
