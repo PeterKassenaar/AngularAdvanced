@@ -1,0 +1,8 @@
+<h2>Add a city to the store</h2>
+
+<div>
+  <input class="form-control-lg" type="text" placeholder="id" #id>
+  <input class="form-control-lg" type="text" placeholder="name" #name>
+  <button class="btn btn-primary btn-lg"
+    (click)="addCity(id.value, name.value)">Add city</button>
+</div>

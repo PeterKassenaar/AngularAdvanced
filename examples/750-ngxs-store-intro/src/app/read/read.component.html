@@ -1,0 +1,14 @@
+<div>
+  <h3>Current cities in the store</h3>
+  <ul class="list-group">
+    <li class="list-group-item"
+        *ngFor="let city of city$ | async">
+      {{ city.id }} - {{ city.name }}
+      <button
+        class="btn btn-danger btn-sm float-right "
+        (click)="removeCity(city.id)">
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>
