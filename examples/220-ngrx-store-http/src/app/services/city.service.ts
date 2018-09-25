@@ -39,7 +39,7 @@ export class CityService {
 				},
 				err => {
 					console.log('FOUT!: ', err);
-					throw  err.json();
+					throw  err;
 				});
 	}
 
