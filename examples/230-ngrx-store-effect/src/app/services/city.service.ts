@@ -27,6 +27,7 @@ export class CityService {
 			tap(res => console.log('just received', res))
 		).pipe(
 			catchError(err => {
+				console.error('ERROR: did you forget to start json-server?');
 				console.log(err);
 				throw err;
 			})
