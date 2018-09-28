@@ -1,0 +1,10 @@
+<h2>Some random users</h2>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let user of randomUsers | async">
+    <h3>{{ user.name.title }} {{ user.name.first}} {{ user.name.last }}</h3>
+    {{ user.email }}
+  </li>
+</ul>
+<p>
+  API: <a href="https://randomuser.me/api/?results=10" target="_blank">https://randomuser.me/api/?results=10</a>
+</p>
