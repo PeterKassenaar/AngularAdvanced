@@ -14,18 +14,20 @@ export class AppComponent implements OnInit {
     msg$: Observable<any>;
     counter: number = 0;
     sub: Subscription;
+    counter$ = of(this.counter > 3);
 
     ngOnInit() {
         // Create an observable from the 'click' event
         //1. Hier komt de data vandaan
         this.msg$ = fromEvent(this.btn.nativeElement, 'click')
             .pipe(
-                filter((event: MouseEvent) => event.shiftKey),
-                map(event => {
+                filter((event: MouseEvent) => event.shiftKey),  // filter shiftKey
+                takeWhile(()=> this.counter < 3),               // totdat counter >= 3
+                map(event => {                                  // counter ophogen, waarde emitten
                     this.counter++;
                     return this.input.nativeElement.value;
                 }),
-                finalize(() => console.log('Afgelopen'))
+                finalize(() => console.log('Afgelopen'))        // bij unsubscribe()
             );
     }
 }
