@@ -1,7 +1,8 @@
 <div class="container">
   <h1>Observable demo</h1>
-  <!--<input type="text" #txtInput placeholder="set new message...">-->
-  <button class="btn btn-primary" #btn>Click me</button>
-  <h2>{{msg}}</h2>
+
+  <input class="form-control-lg" type="text" #txtInput placeholder="set new message...">
+  <button class="btn btn-primary"  #btn>Click me</button>
+  <h2>{{msg$ |async | json }} {{ counter }}</h2>
 </div>
 <hr>
