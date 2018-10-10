@@ -9,6 +9,7 @@ import {ApiResolverComponent} from './api-resolver/api-resolver.component';
 import {HomeComponent} from './home/home.component';
 import {SimpleResolverComponent} from './simple-resolver/simple-resolver.component';
 import {ApiResolverService} from './shared/resolvers/app.api-resolver.service';
+import {NoResolverComponent} from './no-resolver/no-resolver.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'no-resolve',
+    component: NoResolverComponent
   },
   {
     path: 'simple',

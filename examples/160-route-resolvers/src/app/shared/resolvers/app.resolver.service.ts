@@ -12,7 +12,7 @@ export class SimpleResolverService implements Resolve<Observable<string>> {
 
   // Creating a resolver is all about implementing
   // the Resolve interface with a specific type
-  resolve() {
+  resolve(): Observable<string> {
     return of('Hello World').pipe(
       delay(2000)
     );

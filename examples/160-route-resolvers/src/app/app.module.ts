@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { SimpleResolverComponent } from './simple-resolver/simple-resolver.component';
 import { ApiResolverComponent } from './api-resolver/api-resolver.component';
 import {HttpClientModule} from '@angular/common/http';
+import { NoResolverComponent } from './no-resolver/no-resolver.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SimpleResolverComponent,
-    ApiResolverComponent
+    ApiResolverComponent,
+    NoResolverComponent
   ],
   imports: [
     BrowserModule,
