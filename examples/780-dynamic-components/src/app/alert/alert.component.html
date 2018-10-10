@@ -1,0 +1,7 @@
+<div class="alert" [ngClass]="'alert-'+type">
+  <button (click)="close()" class="btn btn-secondary btn-sm float-right">close</button>
+  <h2>
+    Alert! type: {{ type }}
+  </h2>
+  <p>{{ msg }}</p>
+</div>
