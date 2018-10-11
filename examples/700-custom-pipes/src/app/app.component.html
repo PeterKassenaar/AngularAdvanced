@@ -21,7 +21,7 @@
       <p>Slice pipe: {{ slicePipe | slice:1:5 }}</p>
       <p>Decimal pipe: {{ decimalPipe |number }}</p>
       <p>Number pipe: {{ numberPipe | number }}</p>
-      <p>Currency pipe: {{ currencyPipe | currency:'EUR':true }}</p>
+      <p>Currency pipe: {{ currencyPipe | currency:'EUR': 'symbol' }}</p>
       <p>JSON pipe: {{ jsonPipe | json }}</p>
       <p>Percent pipe: {{ percentPipe | percent }}</p>
     </div>
