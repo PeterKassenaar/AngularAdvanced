@@ -15,7 +15,7 @@ export class AppComponent implements  OnInit{
   public numberPipe: number   = 42;
   public currencyPipe: number = 49.95; // In de HTML aangeven welke valutacode erbij hoort
   public jsonPipe: Object     = {'Name': "Peter Kassenaar"};
-  public percentPipe: number  = 10;
+  public percentPipe: number  = 0.3;
   public filterCity: string   = '';
 
 
