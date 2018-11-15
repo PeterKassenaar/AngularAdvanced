@@ -1,3 +1,35 @@
 <h1>Home</h1>
-<p>This component is public, i.e. no authentication required</p>
+<p style="font-weight: bold">This component is public, i.e. no authentication required</p>
+<div>
+  <p>This project builds upon work by Jason Watmore. See below. Added is the option to observe the status
+    (login/logout)
+    in the upper right corner of the screen as an observable.</p>
 
+  <p>If you try to navigate to the Random Users page, you are redirected to the login page if you're not logged in.</p>
+
+  <p>This project consists of two sub-projects. They <em>both</em> have a <code>package.json</code> and you need to
+    perform
+    <code>npm install</code> for both of them!
+  </p>
+  <ul>
+    <li><code> /client </code>- the Angular-application using authentication and interceptors</li>
+    <li>
+      <code>/server</code> - a simple NodeJS server using JWT-authentication
+    </li>
+  </ul>
+
+
+  <h3>Server</h3>
+
+  <ul>
+    <li>
+      Go to the <code>/server</code> folder and perform <code>npm install</code>.
+    </li>
+    <li>Open a command prompt in the folder and type <code>npm start</code>.</li>
+    <li>This will start a simple NodeJS server, listening for incoming requests at <code>http://localhost:4000</code>
+    </li>
+  </ul>
+
+  <h3>Client</h3>
+  <p>It is this project. You are already running it.</p>
+</div>

@@ -8,7 +8,6 @@ import {LoginComponent} from './login/login.component';
 // Guard(s)
 import {AuthGuard} from './shared/guards/auth.guard';
 
-
 // Routes in the application
 const routes: Routes = [
   {

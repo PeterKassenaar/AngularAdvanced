@@ -1,23 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-  <h1>Authentication Example</h1>
+  <h1>Authentication and Interceptors Example</h1>
   <a routerLink="home">Home (public)</a> |
   <a routerLink="users">Random Users (login required)</a>
   <a routerLink="login" class="float-right">
-    <span *ngIf="(isLoggedIn | async)">Logout </span>
-    <span *ngIf="!(isLoggedIn | async)">Login</span>
+    <span *ngIf="(isLoggedIn$ | async)">Logout </span>
+    <span *ngIf="!(isLoggedIn$ | async)">Login</span>
   </a>
 
   <router-outlet></router-outlet>
-</div>
-<hr>
 
-<!-- credits -->
-<div class="text-center">
-  <p>
-    Credits: <a href="http://jasonwatmore.com/post/2018/05/23/angular-6-jwt-authentication-example-tutorial"
-                target="_top">Angular 6 - JWT Authentication Example & Tutorial</a>
-    -
-    <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
-  </p>
+  <hr>
+
+  <!-- credits -->
+
+  <div class="text-center">
+    <p>
+      Credits: <a href="http://jasonwatmore.com/post/2018/05/23/angular-6-jwt-authentication-example-tutorial"
+                  target="_top">Angular 6 - JWT Authentication Example & Tutorial</a>
+      -
+      <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
+    </p>
+  </div>
 </div>

@@ -1,10 +1,16 @@
 <h2>Some random users</h2>
+<div *ngIf="randomUsers$ | async; else loading">
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let user of randomUsers | async">
+  <li class="list-group-item" *ngFor="let user of randomUsers$ | async">
     <h3>{{ user.name.title }} {{ user.name.first}} {{ user.name.last }}</h3>
     {{ user.email }}
   </li>
 </ul>
+</div>
+<ng-template #loading>
+  <p>loading...</p>
+  <img src="../../../assets/spinner.gif" alt="spinner icon...">
+</ng-template>
 <p>
   API: <a href="https://randomuser.me/api/?results=10" target="_blank">https://randomuser.me/api/?results=10</a>
 </p>

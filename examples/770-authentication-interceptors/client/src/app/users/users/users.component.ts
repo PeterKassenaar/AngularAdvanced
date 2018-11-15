@@ -8,13 +8,13 @@ import {UserService} from '../../shared/services/user.service';
 })
 export class UsersComponent implements OnInit {
 
-  randomUsers: Observable<any[]>;
+  randomUsers$: Observable<any[]>;
 
   constructor(private userService: UserService) {
   }
 
   ngOnInit() {
-    this.randomUsers = this.userService.getRandomUsers();
+    this.randomUsers$ = this.userService.getRandomUsers();
   }
 
 }
