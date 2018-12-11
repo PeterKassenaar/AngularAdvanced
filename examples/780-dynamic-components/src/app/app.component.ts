@@ -1,4 +1,9 @@
 // Credits: Netanel Basal: https://netbasal.com/dynamically-creating-components-with-angular-a7346f4a982d
+// Use case for dynamic components:
+// - dialog boxes
+// - dynamic forms
+// - components with generic templates
+// - ...
 import {
   Component,
   ComponentFactory,
@@ -44,9 +49,9 @@ export class AppComponent implements OnDestroy {
     });
 
     // Optionally - let the component destroy itself after a 2,5s delay
-    // setTimeout(() => {
-    //   this.componentRef.destroy(); // do some fancy fadeout animation
-    // }, 2500);
+    setTimeout(() => {
+      this.componentRef.destroy(); // do some fancy fadeout animation
+    }, 2500);
   }
 
   ngOnDestroy() {
