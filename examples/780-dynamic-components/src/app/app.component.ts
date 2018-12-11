@@ -1,7 +1,9 @@
 // Credits: Netanel Basal: https://netbasal.com/dynamically-creating-components-with-angular-a7346f4a982d
+// Rajat S: https://blog.bitsrc.io/how-to-build-dynamic-components-in-angular-6-41f50abddc64
 // Use case for dynamic components:
 // - dialog boxes
 // - dynamic forms
+// - Tabs
 // - components with generic templates
 // - ...
 import {
