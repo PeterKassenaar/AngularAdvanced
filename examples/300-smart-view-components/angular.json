@@ -90,7 +90,7 @@
           }
         }
       }
-    },
+    }
   },
   "defaultProject": "cli-project",
   "schematics": {
