@@ -13,19 +13,21 @@ export interface Person {
 @Injectable()
 export class RemoteService {
 
+  url: string = 'someEndPoint/somePeople.json';
+
 	constructor(private http: HttpClient) {
 	}
 
 	// Get fake people
 	public getPeople(): Observable<Person[]> {
 		return this.http
-			.get<Person[]>('someEndPoint/somePeople.json')
+			.get<Person[]>(this.url)
 	}
 
 	// Get fake first name
 	public getFirstName(): Observable<string> {
 		return this.http
-			.get<Person[]>('someEndPoint/somePeople.json')
+			.get<Person[]>(this.url)
 			.map(result => result[0].name);
 	}
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { City } from './city.model';
+import { City } from '../shared/model/city.model';
 
 @Component({
   selector: 'app-spy',
@@ -9,9 +9,8 @@ export class SpyComponent {
   cities: City[] = [
     new City(1, 'Venlo', 'LB'),
     new City(2, 'Groningen', 'GR'),
-    new City(2, 'Groningen', 'GR'),
-    new City(2, 'Groningen', 'GR'),
-    new City(2, 'Groningen', 'GR')
+    new City(2, 'Amsterdam', 'NH'),
+    new City(2, 'Rotterdam', 'ZH')
   ];
   counter = 0;
 

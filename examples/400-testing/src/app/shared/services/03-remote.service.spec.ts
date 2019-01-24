@@ -45,29 +45,37 @@ describe('04- Simple HTTP Remote Service', () => {
     expect(remoteService).toBeDefined();
   });
 
+  // 5. The call to the 'backend'
   it('should return an Observable<User[]>', () => {
-    remoteService.getPeople().subscribe(users => {
-      expect(users.length).toBe(2);
-      expect(users).toEqual(mockUsers);
-    });
+    // Make an HTTP GET request
+    remoteService.getPeople()
+      .subscribe(users => {
+        expect(users.length).toBe(2);
+        expect(users).toEqual(mockUsers);
+      });
     // verify and flush our request
-    const req = httpMock.expectOne('someEndPoint/somePeople.json');
+    const req = httpMock.expectOne(remoteService.url);
     expect(req.request.method).toBe("GET"); // just to be safe. Not mandatory. Useful for testing http methods.
 
     // About .flush(): resolve the request by returning a body
     // plus additional HTTP information (such as response headers) if provided.
     // Both successful and unsuccessful responses can be delivered via flush().
     // https://angular.io/api/common/http/testing/TestRequest.
-    // Only after a flush() the .subscribe expecations are evaluated.
+    // Only after a flush() the .subscribe expecations are evaluated and available!
     req.flush(mockUsers);
+
+    // Finally, verify if there are no outstanding requests.
+    // It is (also) done by our afterEach(), so no need to include it here. But uncomment
+    // the next line if you don't have an afterEach().
+    // httpMock.verify()
   });
 
-  it('should return the first name',()=>{
-    remoteService.getFirstName().subscribe(name =>{
+  it('should return the first name', () => {
+    remoteService.getFirstName().subscribe(name => {
       expect(name).toBe('Peter')
     });
     // verify and flush our request
-    const req = httpMock.expectOne('someEndPoint/somePeople.json');
+    const req = httpMock.expectOne(remoteService.url);
     req.flush(mockUsers);
   })
   // end testsuite

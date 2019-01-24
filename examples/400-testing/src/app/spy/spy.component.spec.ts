@@ -1,12 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpyComponent } from './spy.component';
-import { City } from './city.model';
+import { City } from '../shared/model/city.model';
 
+/*
 describe('SpyComponent', () => {
   let component: SpyComponent;
   let fixture: ComponentFixture<SpyComponent>;
 
+  //********************************
+  // beforeEach - setup of every test
+  //********************************
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SpyComponent]
@@ -24,6 +28,9 @@ describe('SpyComponent', () => {
     fixture.detectChanges();
   });
 
+  //********************************
+  // it-blocks - all unit tests
+  //********************************
   it('should create', () => {
     expect(component).toBeTruthy();
   });
@@ -42,7 +49,9 @@ describe('SpyComponent', () => {
     expect(component.cities.length).toEqual(1);
   });
 
+  //********************************
   // Example of a Spy. "Is the correct method called, when a specific button is clicked?"
+  //********************************
   it('should call the deleteCity method only when delete button is clicked', async(() => {
     spyOn(component, 'deleteCity');
     const button = fixture.debugElement.nativeElement.querySelector(
@@ -55,3 +64,4 @@ describe('SpyComponent', () => {
     });
   }));
 });
+*/
