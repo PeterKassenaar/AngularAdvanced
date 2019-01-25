@@ -16,6 +16,8 @@ import {
   ViewChild,
   ViewContainerRef
 } from '@angular/core';
+
+// import the skeleton for our dynamic component
 import {AlertComponent} from './alert/alert.component';
 
 @Component({
@@ -33,7 +35,6 @@ export class AppComponent implements OnDestroy {
   constructor(private resolver: ComponentFactoryResolver) {
     // 1. The ComponentFactoryResolver service exposes one primary method, resolveComponentFactory.
     // 2. The resolveComponentFactory() method takes a component and returns a ComponentFactory.
-
     // 3. A ComponentFactory is an object that knows how to create components (hence, a 'Factory')
   }
 
@@ -52,7 +53,7 @@ export class AppComponent implements OnDestroy {
 
     // Optionally - let the component destroy itself after a 2,5s delay
     setTimeout(() => {
-      this.componentRef.destroy(); // do some fancy fadeout animation
+      this.componentRef.destroy(); // or do some fancy fadeout animation
     }, 2500);
   }
 
