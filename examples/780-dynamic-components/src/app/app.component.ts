@@ -52,9 +52,9 @@ export class AppComponent implements OnDestroy {
     });
 
     // Optionally - let the component destroy itself after a 2,5s delay
-    setTimeout(() => {
-      this.componentRef.destroy(); // or do some fancy fadeout animation
-    }, 2500);
+    // setTimeout(() => {
+    //   this.componentRef.destroy(); // or do some fancy fadeout animation
+    // }, 2500);
   }
 
   ngOnDestroy() {
