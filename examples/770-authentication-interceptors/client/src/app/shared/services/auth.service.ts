@@ -20,6 +20,7 @@ export class AuthenticationService {
   /**
    * this checks if the user has a token in localStorage.
    * In that case the user is considered logged in.
+   * TODO: add real auth logic on the server, i.e. to see if the token is still valid.
    * @returns {boolean}
    */
   private hasToken(): boolean {
