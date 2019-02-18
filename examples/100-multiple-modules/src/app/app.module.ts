@@ -7,7 +7,6 @@ import {ProductsModule} from './products/products.module';
 
 // components
 import {AppComponent} from './app.component';
-import {IsahModule} from './isah/isah.module';
 
 @NgModule({
 	declarations: [
@@ -16,8 +15,7 @@ import {IsahModule} from './isah/isah.module';
 	imports     : [
 		BrowserModule,
 		CustomerModule,
-		ProductsModule,
-		IsahModule
+		ProductsModule
 	],
 	bootstrap   : [AppComponent]
 })
