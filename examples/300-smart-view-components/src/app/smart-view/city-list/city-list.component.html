@@ -4,6 +4,7 @@
 		[class.visited]="city.visited"
 		(click)="selectCity.emit(city)">
 		{{ city.id}} - {{ city.name }}
+		<!-- Another, nested, view component -->
 		<city-visited [visited]="city.visited"
 					  (toggle)="city.visited = $event; toggleVisited.emit(city)">
 		</city-visited>
