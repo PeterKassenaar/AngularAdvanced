@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"multiple-modules": {
+		"cli-project": {
 			"root": "",
 			"sourceRoot": "src",
 			"projectType": "application",
@@ -84,7 +84,7 @@
 			}
 		}
 	},
-	"defaultProject": "multiple-modules",
+	"defaultProject": "cli-project",
 	"schematics": {
 		"@schematics/angular:component": {
 			"prefix": "app",

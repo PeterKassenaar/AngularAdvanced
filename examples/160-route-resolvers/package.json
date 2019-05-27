@@ -1,5 +1,5 @@
 {
-  "name": "160-route-resolvers",
+  "name": "resolvers",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
