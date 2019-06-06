@@ -6,6 +6,8 @@ const routes: Routes = [
 	{path: '', redirectTo: 'customers', pathMatch: 'full'},
 	{path: 'customers', loadChildren: './customer/customer.module#CustomerModule'},
 	{path: 'products', loadChildren: './products/products.module#ProductsModule'},
+	// New notation (Angular 8+):
+	// {path: 'customer', loadChildren:()=> import('./customer/customer.module').then(mod => mod.CustomersModule)}
 ];
 
 const config: ExtraOptions    = {
