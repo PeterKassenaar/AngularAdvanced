@@ -1,13 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-	<h1>
-		Welcome to {{ title }}!
-	</h1>
-	<button class="btn btn-primary" (click)="increment()">Increment</button>
-	<button class="btn btn-primary" (click)="decrement()">Decrement</button>
-	<div>Current Count: {{ counter$ | async }}</div>
+<div class="container text-center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <button class="btn btn-primary" (click)="increment()">Increment</button>
+  <button class="btn btn-primary" (click)="decrement()">Decrement</button>
+  <div>Current Count: {{ count$ | async }}</div>
 
-	<button class="btn btn-danger" (click)="reset()">Reset Counter</button>
-	<!--Extra component, also subscribed to the store-->
-	<app-extra></app-extra>
+  <button class="btn btn-danger" (click)="reset()">Reset Counter</button>
+  <!--Extra component, also subscribed to the store-->
+<!--  <app-extra></app-extra>-->
 </div>

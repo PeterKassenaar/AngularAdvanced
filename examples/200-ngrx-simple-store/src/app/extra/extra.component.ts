@@ -1,7 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {AppState} from '../appState';
-import {Observable} from 'rxjs/Observable';
+import {select, Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
+
+// Create an interface for the AppState (instead of declaring it inline)
+export interface AppState {
+  counter: number;
+}
 
 @Component({
   selector: 'app-extra',
@@ -9,13 +13,17 @@ import {Observable} from 'rxjs/Observable';
 })
 export class ExtraComponent implements OnInit {
 
+  // The counter observable
   counterObservable$: Observable<number>;
 
   constructor(private store: Store<AppState>) {
   }
 
+  // Select the counter from the store
   ngOnInit() {
-    this.counterObservable$ = this.store.select('counter');
+    this.counterObservable$ = this.store.pipe(
+      select(s => s.counter)
+    );
   }
 
 }
