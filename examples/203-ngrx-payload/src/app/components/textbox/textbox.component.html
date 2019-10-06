@@ -1,0 +1,12 @@
+<hr>
+<h2>Textbox component</h2>
+<input type="text" #input
+       (keyup.enter)="setText(input.value)"
+       placeholder="set message..." class="form-control-lg">
+<button class="btn btn-primary"
+        (click)="setText(input.value)">Set Text
+</button>
+<button class="btn btn-danger"
+        (click)="clearText()">Clear Text
+</button>
+<h2>Current message: {{msg$ | async }}</h2>

@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container text-center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <button class="btn btn-primary" (click)="increment(+incrementBy.value)">Increment</button>
+  <input
+    class="form-control-lg"
+    type="number" #incrementBy placeholder="increment by...">
+  <button class="btn btn-primary" (click)="decrement()">Decrement</button>
+  <div>Current Count: {{ count$ | async }}</div>
+  <button class="btn btn-danger" (click)="reset()">Reset Counter</button>
+  <!--Extra component, also subscribed to the store-->
+  <!--  ***********************************-->
+  <!--  Workshop: Create an extra component, which adds/sends a -->
+  <!--  message to the store. The message is then displayed in the -->
+  <!--  component (for instance <app-textbox>, AND in this component -->
+  <!--  ***********************************-->
+</div>
