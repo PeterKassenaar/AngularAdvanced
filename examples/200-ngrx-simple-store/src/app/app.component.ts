@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {Store, select} from '@ngrx/store';
 
 // Import all possible actions
-import {increment, decrement, reset} from './counter-store/counter.actions';
+import {increment, decrement, reset} from './store/counter.actions';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     // Select the 'count' property from the store and
     // assign it to count$ variable.
     this.count$ = this.store.pipe(
-      select(s => s.count)
+      select('count')
     );
   }
 

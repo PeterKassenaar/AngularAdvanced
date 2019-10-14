@@ -7,7 +7,7 @@ import {ExtraComponent} from './extra/extra.component';
 
 // 1. import store stuff
 import {StoreModule} from '@ngrx/store';
-import {counterReducer} from './counter-store/counter.reducer';
+import {counterReducer} from './store/counter.reducer';
 
 @NgModule({
   declarations: [

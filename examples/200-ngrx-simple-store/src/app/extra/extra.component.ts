@@ -16,13 +16,13 @@ export class ExtraComponent implements OnInit {
   // The counter observable
   counterObservable$: Observable<number>;
 
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<{count: number}>) {
   }
 
   // Select the counter from the store
   ngOnInit() {
     this.counterObservable$ = this.store.pipe(
-      select(s => s.counter)
+      select(s => s.count)
     );
   }
 
