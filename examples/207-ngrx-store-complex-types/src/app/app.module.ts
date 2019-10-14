@@ -1,9 +1,11 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
+// Import components
 import {AppComponent} from './app.component';
+
+// Import Store stuff
 import {StoreModule} from '@ngrx/store';
-import {reducers, metaReducers} from './store';
 import {citiesReducer} from './store/cities.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';

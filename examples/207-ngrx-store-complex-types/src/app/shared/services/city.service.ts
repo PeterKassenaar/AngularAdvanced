@@ -18,31 +18,31 @@ export class CityService {
       id: 1,
       name: 'Groningen',
       province: 'Groningen',
-      inhabitants: 185000
+      population: 185000
     },
     {
       id: 2,
       name: 'Hengelo',
       province: 'Overijssel',
-      inhabitants: 78000
+      population: 78000
     },
     {
       id: 3,
       name: 'Den Haag',
       province: 'Zuid-Holland',
-      inhabitants: 345000
+      population: 345000
     },
     {
       id: 4,
       name: 'Enschede',
       province: 'Grote Markt',
-      inhabitants: 137000
+      population: 137000
     },
     {
       id: 5,
       name: 'Heerlen',
       province: 'Limburg',
-      inhabitants: 67000
+      population: 67000
     }
   ];
 
@@ -58,6 +58,13 @@ export class CityService {
     this.store.dispatch(removeCity({city}));
   }
 
-  // TODO: add extra method to add, remove cities, etc.
+  // *********************** Workshop
+  // TODO: add extra methods to add, update cities, etc.
 
+  // ************************ Utility function
+  // Create random ID for newly added cities.
+  // Note: In real applications we would let a backend do this.
+  getRandomId(): number {
+    return Math.floor((Math.random() * 10000) + 1);
+  }
 }

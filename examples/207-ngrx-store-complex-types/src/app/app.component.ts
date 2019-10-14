@@ -37,22 +37,14 @@ export class AppComponent implements OnInit {
   // ******************
   // Workshop
   // ******************
-  addCity(city: HTMLInputElement) {
+  addCity(city: string) {
     // TODO: add city to store
-    alert('TODO: add city: ' + city.value);
+    alert('TODO: add city: ' + city);
   }
 
-  editCity(city) {
+  updateCity(city: City) {
     // TODO...
-    this.currentCity = city;
+    alert('TODO: update this city: ' + city.name);
   }
 
-  saveCity(city: HTMLInputElement) {
-    // TODO...
-    alert('TODO...');
-  }
-
-  cancel() {
-    this.currentCity = null;
-  }
 }
