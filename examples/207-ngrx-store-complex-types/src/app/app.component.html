@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Using complex types in your store</h2>
+  <h3>List of cities</h3>
+  <button class="btn btn-success"
+          (click)="loadCities()">
+    Load initial list
+  </button>
+  <!--List of current cities-->
+  <ul class="list-group">
+    <li class="list-group-item"
+        *ngFor="let city of cities$ | async">
+      <a (click)="editCity(city)">{{city | json }}</a>
+      <button (click)="removeCity(city)"
+              class="btn btn-sm btn-danger pull-right">
+        Remove
+      </button>
+    </li>
+  </ul>
+</div>
