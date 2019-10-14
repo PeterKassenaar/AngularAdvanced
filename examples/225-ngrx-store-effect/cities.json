@@ -1,0 +1,34 @@
+{
+  "cities": [
+    {
+      "id": 1,
+      "name": "Groningen",
+      "province": "Groningen",
+      "population": 185000
+    },
+    {
+      "id": 2,
+      "name": "Hengelo",
+      "province": "Overijssel",
+      "population": 78000
+    },
+    {
+      "id": 3,
+      "name": "Den Haag",
+      "province": "Zuid-Holland",
+      "population": 345000
+    },
+    {
+      "id": 4,
+      "name": "Enschede",
+      "province": "Grote Markt",
+      "population": 137000
+    },
+    {
+      "id"        : 5,
+      "name"      : "Heerlen",
+      "province"  : "Limburg",
+      "population": 67000
+    }
+  ]
+}
