@@ -4,13 +4,14 @@
     Welcome to {{ title }}!
   </h1>
   <button class="btn btn-primary" (click)="increment(+incrementBy.value)">Increment</button>
-  <input
-    class="form-control-lg"
-    type="number" #incrementBy placeholder="increment by...">
   <button class="btn btn-primary" (click)="decrement()">Decrement</button>
-  <div>Current Count: {{ count$ | async }}</div>
+  <h2>Current Count: {{ count$ | async }}</h2>
   <button class="btn btn-danger" (click)="reset()">Reset Counter</button>
-  <!--Extra component, also subscribed to the store-->
+  <p>
+    <input
+      class="form-control-lg" (keyup.enter)="increment(+incrementBy.value)"
+      type="number" #incrementBy placeholder="increment by...">
+  </p>
   <!--  ***********************************-->
   <!--  Workshop: Create an extra component, which adds/sends a -->
   <!--  message to the store. The message is then displayed in the -->

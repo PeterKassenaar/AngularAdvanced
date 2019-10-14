@@ -11,8 +11,7 @@ import {counterReducer} from './store/counter/counter.reducer';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ExtraComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

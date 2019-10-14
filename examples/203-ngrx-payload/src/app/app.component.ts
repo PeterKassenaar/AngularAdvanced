@@ -13,6 +13,7 @@ import {CounterState} from './store/counter/counter.state';
 export class AppComponent implements OnInit {
   title = 'Simple Store App';
   count$: Observable<number>;
+  // WORKSHOP:
   msg$: Observable<string>;
 
 
