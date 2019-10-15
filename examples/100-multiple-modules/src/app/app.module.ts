@@ -9,15 +9,15 @@ import {ProductsModule} from './products/products.module';
 import {AppComponent} from './app.component';
 
 @NgModule({
-	declarations: [
-		AppComponent
-	],
-	imports     : [
-		BrowserModule,
-		CustomerModule,
-		ProductsModule
-	],
-	bootstrap   : [AppComponent]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    CustomerModule,
+    ProductsModule
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
