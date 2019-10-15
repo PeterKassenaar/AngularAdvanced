@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>225 - Fetching data via createEffect()</h2>
+  <h3>List of cities</h3>
+  <button class="btn btn-success"
+          (click)="loadCities()">
+    Load initial list
+  </button>
+  <input type="text"
+         #newCity
+         placeholder="new city..."
+         class="form-control-lg"
+         (keyup.enter)="addCity(newCity.value)">
+  <!--List of current cities-->
+  <ul class="list-group">
+    <li class="list-group-item"
+        *ngFor="let city of cities$ | async">
+      {{city | json }}
+      <button (click)="updateCity(city)"
+              class="btn btn-sm btn-info pull-right">
+        Update
+      </button>
+      <button (click)="removeCity(city)"
+              class="btn btn-sm btn-danger pull-right">
+        Remove
+      </button>
+    </li>
+  </ul>
+</div>

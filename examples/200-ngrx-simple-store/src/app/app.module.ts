@@ -1,25 +1,27 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-// Store stuff
-import {StoreModule} from '@ngrx/store';
-import {counterReducer} from './reducers/counter';
-
+// 0. Declare components
 import {AppComponent} from './app.component';
-import { ExtraComponent } from './extra/extra.component';
+import {ExtraComponent} from './extra/extra.component';
 
+// 1. import store stuff
+import {StoreModule} from '@ngrx/store';
+import {counterReducer} from './store/counter.reducer';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		ExtraComponent
-	],
-	imports     : [
-		BrowserModule,
-		StoreModule.forRoot({counter: counterReducer})
-	],
-	providers   : [],
-	bootstrap   : [AppComponent]
+  declarations: [
+    AppComponent,
+    ExtraComponent
+  ],
+  imports: [
+    BrowserModule,
+    // 2. Add the StoreModule to the AppModule,
+    // to make the store known inside the application
+    StoreModule.forRoot({count: counterReducer}),
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
