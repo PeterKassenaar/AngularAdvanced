@@ -23,6 +23,6 @@ const routes: Routes = [
 const config: ExtraOptions = {
   useHash: false,
   enableTracing: false, // turn on for console.logging of routing events
-  preloadingStrategy: PreloadAllModules // uncomment to load all modules lazily
+  // preloadingStrategy: PreloadAllModules // uncomment to load all modules lazily
 };
 export const AppRoutingModule = RouterModule.forRoot(routes, config);
