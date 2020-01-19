@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="8fc6cd427cda31033ac9cc3193dfa0f631141537" datatype="html">
+        <source>Welcome to Angular</source>
+        <target>Bienvenu a Angular</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Header</note>
+        <note priority="1" from="meaning">Homepage</note>
+      </trans-unit>
+      <trans-unit id="b5cf2a4d22b330505a069289e0a543847323b4ce" datatype="html">
+        <source>This site uses internationalization options</source>
+        <target>Ce site utilise des options d'internationalisation</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Heading2</note>
+        <note priority="1" from="meaning">Homepage</note>
+      </trans-unit>
+      <trans-unit id="f1c9e2282ff5d1d1985aefd2ba47de8ef301b676" datatype="html">
+        <source>Internationalization is the process of designing and preparing your app to be usable in different languages.
+  Localization is the process of translating your internationalized app into specific languages for particular locales.
+</source>
+  <target>L'internationalisation est le processus de conception et de préparation de votre application pour qu'elle soit utilisable dans différentes langues. La localisation est le processus de traduction de votre application internationalisée dans des langues spécifiques pour des lieux particuliers.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Description of internationalization process</note>
+        <note priority="1" from="meaning">Homepage</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
