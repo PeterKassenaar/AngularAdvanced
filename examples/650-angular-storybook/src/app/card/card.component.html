@@ -1,0 +1,13 @@
+<h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
+
+<hr *ngIf="title || subtitle">
+
+<img *ngIf="img" [src]="img" alt="">
+
+<p>{{ content }}</p>
+
+<button (click)="handleClick()"
+        [class]="btnClass">
+  Learn more
+</button>
