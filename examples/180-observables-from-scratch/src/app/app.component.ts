@@ -16,19 +16,25 @@ export class AppComponent implements OnInit {
     sub: Subscription;
 
     ngOnInit() {
-        // Create an observable from the 'click' event
-        //1. Data input - we create an observable from the click event of a button
+        // Create an observable from the 'click' event.
+        // 1. Data input - we create an observable from the click event of a button.
         fromEvent(this.btn.nativeElement, 'click')
-        // 2. using the .pipe() method to apply 0, 1 or more operators on the stream
+            // 2. using the .pipe() method to apply 0, 1 or more operators on the stream
             .pipe(
-                map(event => {                                  // counter ophogen, waarde emitten
+                map(event => {  // Do 2 things here: increment counter, emit value (i.e. a string)
                     this.counter++;
                     return 'Goodbye world';
                 })
-                //... more operators, see for example https://www.learnrxjs.io/
+                // ... more operators, see for example https://www.learnrxjs.io/
             )
             // 3. Final input, in the form of a .subscribe() block.
             //   We can also use the | async pipe in the view to let Angular handle subscriptions
             .subscribe(result => this.msg = result);
+
+        // *****************
+        // Workshop: create a textbox and a new button.
+        // Subscribe to the stream coming from the textbox (or use | async).
+        // set msg to the value you typed into the textobx.
+        // *****************
     }
 }
