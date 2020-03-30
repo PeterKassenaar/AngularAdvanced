@@ -1,0 +1,14 @@
+<div class="mat-app-background">
+  <h1>Angular Material demo application</h1>
+  <h2>This is the default component</h2>
+  <p>A Material Slider component. Current value: {{ sliderValue }} </p>
+  <mat-slider min="1" max="100" step="1" value="1"
+              thumbLabel
+              (change)="onSliderChange($event)"
+              tickInterval="1">
+  </mat-slider>
+</div>
+<!--*************-->
+<!--Workshop: Add a Datepicker component.-->
+<!--See: https://material.angular.io/components/datepicker/overview for information-->
+<!--*************-->
