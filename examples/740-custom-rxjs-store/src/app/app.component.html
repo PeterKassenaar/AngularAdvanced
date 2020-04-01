@@ -1,0 +1,6 @@
+<h1>Custom Store</h1>
+<ul>
+  <li *ngFor="let todo of todo$ | async">
+    {{ todo.id}} - {{ todo.name}}
+  </li>
+</ul>
