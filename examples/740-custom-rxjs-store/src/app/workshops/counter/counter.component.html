@@ -1,0 +1,9 @@
+<h2>Current value: {{ counter$ | async }}</h2>
+<button class="btn btn-success" (click)="increment()">+1</button>
+<button class="btn btn-primary" (click)="decrement()">-1</button>
+<button class="btn btn-danger" (click)="reset()">Reset</button>
+<p>
+  <input class="form-control-lg" type="number" #num (keyup.enter)="increment(+num.value)"
+         placeholder="Add this number...">
+</p>
+<hr>

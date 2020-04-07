@@ -1,0 +1,16 @@
+<h2>Search for movies</h2>
+<input type="text" class="form-control-lg"
+       #keyword
+       placeholder="movie title"
+       (keyup.enter)="searchMovies(keyword.value)">
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let movie of movie$ | async">
+    <img src="{{movie.Poster}}" class="moviePoster" alt="poster">
+    <strong>{{ movie.Title}}</strong>, imdbID: {{ movie.imdbID }}<br>
+    Actors: {{ movie.Actors }}<br>
+    <p *ngIf="movie.Plot else loading"><code>{{ movie.Plot }}</code></p>
+  </li>
+</ul>
+<ng-template #loading>
+  <img src="assets/loading_spinner.gif" alt="Loading...">
+</ng-template>

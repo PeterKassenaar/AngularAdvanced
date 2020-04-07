@@ -1,6 +1,8 @@
-<h1>Custom Store</h1>
-<ul>
-  <li *ngFor="let todo of todo$ | async">
-    {{ todo.id}} - {{ todo.name}}
-  </li>
-</ul>
+<div class="container">
+  <h1>Custom Store</h1>
+  <a routerLink="todos" routerLinkActive="badge badge-info">Todos</a> |
+  <a routerLink="counter" routerLinkActive="badge badge-info">Counter</a> |
+  <a routerLink="movies" routerLinkActive="badge badge-info">Movies</a> |
+  <hr>
+  <router-outlet></router-outlet>
+</div>

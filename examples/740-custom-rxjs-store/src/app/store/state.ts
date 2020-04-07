@@ -1,3 +1,10 @@
+// state.ts
+export interface Todo {
+  id: number;
+  name: string;
+  done: boolean;
+}
 export interface State {
-  playlist: any[];
+  todos: Todo[];
+  // other slices of the store
 }
