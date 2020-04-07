@@ -1,0 +1,13 @@
+<div style="text-align:center">
+  <h1>{{ title }}</h1>
+  <button class="btn btn-primary" (click)="increment()">Increment</button>
+  <button class="btn btn-primary" (click)="decrement()">Decrement</button>
+  <div>Current Count: {{ counter$ | async }}</div>
+
+  <button class="btn btn-danger" (click)="reset()">Reset Counter</button>
+
+  <div style="margin-top: 40px;">
+    <input type="number" class="form-control-lg" placeholder="number..." (keyup.enter)="addNumber(txtNumber.value)" #txtNumber>
+  </div>
+
+</div>
