@@ -25,9 +25,11 @@ export class CounterComponent implements OnInit {
     this.counter$ = this.store.select('counter');
   }
 
-  // Workshop
+  // Actions to alter the store
   increment(num = 0) {
     if (num !== 0) {
+      // IF there is a number in the box, update the counter with that
+      // number; otherwise update with 1.
       this.store.updateCounter('counter', +num);
     } else {
       this.store.updateCounter('counter', 1);

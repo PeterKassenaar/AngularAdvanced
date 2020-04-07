@@ -17,7 +17,7 @@ export class MovieComponent implements OnInit {
   // Create actions to search for movies and display results. Also search for movie details
   // ****************
   movie$: Observable<any[]>; // TODO: create a movie model class or -interface
-  url = 'https://www.omdbapi.com/?apikey=f1f56c8e&'; // register for your own API key
+  url = 'https://www.omdbapi.com/?apikey=f1f56c8e&'; // Please register your own API key.
 
   constructor(private store: Store, private http: HttpClient) { }
 
@@ -30,8 +30,8 @@ export class MovieComponent implements OnInit {
     // search for- and send movies to the store
     this.http.get(`${this.url}s=${keyword}`)
       .pipe(
-        map((movies: any) => movies.Search),
-        tap(movies => this.store.set('movies', movies)),
+        map((movies: any) => movies.Search), // Map out movies.Search array, b/c this API wraps its results this way.
+        tap(movies => this.store.set('movies', movies)), // Update the store. Can also be done in the .subscribe() method
         map((movies: any[]) => movies.forEach(movie => {
           // Search for details, by looping over every movie. The current
           // results are already displayed, since we 'tapped' the first results to the store.
