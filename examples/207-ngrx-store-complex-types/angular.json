@@ -121,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "store-cities"
+    }
+  },
+  "defaultProject": "store-cities",
+  "cli": {
+    "analytics": false
+  }
 }

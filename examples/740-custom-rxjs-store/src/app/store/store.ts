@@ -1,9 +1,9 @@
 // store.ts
 import {BehaviorSubject, Observable} from 'rxjs';
+import {distinctUntilChanged, pluck, tap} from 'rxjs/operators';
 
 // custom interface
 import {State, Todo} from './state';
-import {distinctUntilChanged, pluck, tap} from 'rxjs/operators';
 
 const state: State = {
   todos: undefined
