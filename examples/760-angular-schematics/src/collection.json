@@ -1,0 +1,13 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "my-component": {
+      "description": "A blank schematic.",
+      "factory": "./my-component/index#myComponent"
+    },
+    "ts-header-component": {
+      "description": "A schematic to add a header to every .ts file from a generated component.",
+      "factory": "./ts-header-component/index#tsHeaderComponent"
+    }
+  }
+}
