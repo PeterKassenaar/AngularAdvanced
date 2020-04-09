@@ -21,7 +21,7 @@ export class CounterComponent implements OnInit {
 
   ngOnInit(): void {
     // workshop 1 - counter, initialization
-    this.store.set('counter', 0);
+    this.store.set('counter', 0); // This is now/can also be done in initialState.ts
     this.counter$ = this.store.select('counter');
   }
 
@@ -30,7 +30,7 @@ export class CounterComponent implements OnInit {
     if (num !== 0) {
       // IF there is a number in the box, update the counter with that
       // number; otherwise update with 1.
-      this.store.updateCounter('counter', +num);
+      this.store.updateCounter('counter', +num); // reducer
     } else {
       this.store.updateCounter('counter', 1);
     }

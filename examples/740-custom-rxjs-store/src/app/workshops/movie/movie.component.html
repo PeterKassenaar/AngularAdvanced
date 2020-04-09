@@ -1,12 +1,20 @@
 <h2>Search for movies</h2>
+<p>With simulated delay to fetch the movie details.</p>
+<p>See <code>movie.component.ts</code>, method <code>searchMovies()</code> for details.</p>
 <input type="text" class="form-control-lg"
        #keyword
        placeholder="movie title"
        (keyup.enter)="searchMovies(keyword.value)">
+<button class="btn btn-primary" (click)="searchMovies(keyword.value)">Fetch movies</button>
+<button class="btn btn-warning" (click)="clear()">Clear</button>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let movie of movie$ | async">
-    <img src="{{movie.Poster}}" class="moviePoster" alt="poster">
-    <strong>{{ movie.Title}}</strong>, imdbID: {{ movie.imdbID }}<br>
+    <img *ngIf="movie.Poster !== 'N/A' "
+         src="{{movie.Poster}}"
+         class="moviePoster"
+         [title]="'poster for ' + movie.Title"
+         [alt]="'poster for ' + movie.Title">
+    <strong>{{ movie.Title }}</strong>, imdbID: {{ movie.imdbID }}<br>
     Actors: {{ movie.Actors }}<br>
     <p *ngIf="movie.Plot else loading"><code>{{ movie.Plot }}</code></p>
   </li>

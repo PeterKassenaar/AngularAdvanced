@@ -2,19 +2,20 @@
 import {BehaviorSubject, Observable} from 'rxjs';
 import {distinctUntilChanged, pluck, tap} from 'rxjs/operators';
 
-// custom interface
+// custom interface and implementation
 import {State, Todo} from './state';
+// import {initialState} from './initialState';
 
-const state: State = {
+const initialState: State = {
   todos: undefined
 };
 
-// store.ts
+// store class
 export class Store {
   // 1. use behaviorsubject to create a subject with initial state
   // the last value is also passed to new subscribers.
   // The behaviorsubject holds the data (i.e. state)
-  private subject = new BehaviorSubject<State>(state);
+  private subject = new BehaviorSubject<State>(initialState);
   private store = this.subject.asObservable()
     .pipe(
       distinctUntilChanged() // make it a little bit smoother, don't overnotify the subscribers
@@ -36,14 +37,19 @@ export class Store {
   }
 
   // 4. select a slice from the store, use pluck to only fetch the
-  // requested branch of the json-tree from the store
+  // requested branch of the json-tree from the store/
+  // Generic type <T>
   select<T>(name: string): Observable<T> {
     return this.store.pipe(
+      // operator 'pluck'
       pluck(name),
     );
   }
 
   // 5. Update the store, in this case a list of todos
+  // in ngrx this is called a 'reducer'. In our simple custom store we
+  // have to write our own reducers for every action we want to perform on
+  // the store.
   updateTodo(name: string, payload: Todo): void {
     // 1. fetch the correct slice from the store (even if we only have one)
     const value = this.value[name];

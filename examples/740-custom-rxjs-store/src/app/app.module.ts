@@ -7,9 +7,9 @@ import {AppComponent} from './app.component';
 import {Store} from './store/store';
 
 // Components
-import { CounterComponent } from './workshops/counter/counter.component';
-import { MovieComponent } from './workshops/movie/movie.component';
-import { TodoComponent } from './todo/todo.component';
+import {CounterComponent} from './workshops/counter/counter.component';
+import {MovieComponent} from './workshops/movie/movie.component';
+import {TodoComponent} from './todo/todo.component';
 
 // Routing stuff
 import {AppRoutingModule} from './app-routing.module';
@@ -25,7 +25,7 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [Store],
   bootstrap: [AppComponent]
