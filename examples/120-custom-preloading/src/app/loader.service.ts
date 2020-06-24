@@ -3,6 +3,7 @@ import {PreloadingStrategy, Route} from '@angular/router';
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 
+// TS - Service decorator
 @Injectable({
   providedIn: 'root'
 })
