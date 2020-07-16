@@ -5,7 +5,7 @@ import {Person} from '../model/person.interface';
     selector: 'app-person-detail',
     templateUrl: './person-detail.component.html',
     styleUrls: ['./person-detail.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PersonDetailComponent implements OnInit {
     @Input() person: Person;
