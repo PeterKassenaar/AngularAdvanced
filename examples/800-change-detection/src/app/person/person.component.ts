@@ -16,7 +16,7 @@ import {Person} from '../model/person.interface';
       padding: 10px;
     }`
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush // uncomment this line to run only Change Detecion when input changes
+  // changeDetection: ChangeDetectionStrategy.OnPush // uncomment this line to run only Change Detecion when input changes
 })
 
 export class PersonComponent implements DoCheck {
@@ -27,7 +27,7 @@ export class PersonComponent implements DoCheck {
 
   ngDoCheck() {
     console.log('PersonComponent :: Change detector ran');
-    this.cd.markForCheck(); // Uncomment this line to run Change Detector for *this particular component* again.
+    // this.cd.markForCheck(); // Uncomment this line to run Change Detector for *this particular component* again.
     // See https://angular.io/guide/lifecycle-hooks for more information on Lifecycle hooks like doCheck().
   }
 
