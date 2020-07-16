@@ -20,5 +20,18 @@ export const removeCity = createAction(
   props<{ city: City }>()
 );
 
+// 4. Actions for starting/stopping/error in HTTP-call. No Payload.
+export const loadCitiesStart = createAction(
+  'CITIES - Start loading cities',
+);
+
+export const loadCitiesComplete = createAction(
+  'CITIES - Completed loading cities',
+);
+
+// Not implemented...
+export const loadCitiesFail = createAction(
+  'CITIES - Failed loading cities',
+);
 // TODO: create your own actions for editing/updating a city, etc.
 

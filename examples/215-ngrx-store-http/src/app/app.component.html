@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>220 - Fetching data over Http</h2>
+  <h2>215 - Fetching data over Http</h2>
   <h3>List of cities</h3>
   <button class="btn btn-success"
           (click)="loadCities()">
@@ -10,6 +10,12 @@
          placeholder="new city..."
          class="form-control-lg"
          (keyup.enter)="addCity(newCity.value)">
+
+  <!--Loading indicator - only showed if state is 'loading' -->
+  <h2 *ngIf="loading$ | async">
+    <img src="assets/spinner.gif" alt="loading...">
+  </h2>
+
   <!--List of current cities-->
   <ul class="list-group">
     <li class="list-group-item"

@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {City} from './shared/models/city.model';
 import {CityService} from './shared/services/city.service';
 import {select, Store} from '@ngrx/store';
+import {CitiesState} from './store/cities.state';
 
 @Component({
   selector: 'app-root',
@@ -10,18 +11,23 @@ import {select, Store} from '@ngrx/store';
 })
 export class AppComponent implements OnInit {
   cities$: Observable<City[]>;
+  loading$ : Observable<boolean>;
   currentCity: City;
 
   constructor(
-    private store: Store<City[]>,
+    private store: Store<{ cities: CitiesState }>,
     private cityService: CityService) {
   }
 
   ngOnInit(): void {
     // Bind observable this.cities$ to  state from the store
     this.cities$ = this.store.pipe(
-      select('cities')
+      select(s => s.cities.cities)
     );
+    // Bind observable this.loading$ to  state from the store
+    this.loading$ = this.store.pipe(
+      select(s => s.cities.loading)
+    )
   }
 
   // load initial cities on mouseclick
@@ -46,5 +52,4 @@ export class AppComponent implements OnInit {
     // TODO...
     alert('TODO: update this city: ' + city.name);
   }
-
 }
