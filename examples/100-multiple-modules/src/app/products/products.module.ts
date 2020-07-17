@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
 import {SharedModule} from '../shared/shared.module';
 
 // custom component for this module
-import {ProductsComponent} from './productList/products.component';
+import {ProductsComponent} from './product-list/products.component';
 
 @NgModule({
 	imports     : [

@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 
 // components for this module
-import { CustomerComponent } from './customerList/customer.component';
+import { CustomerComponent } from './customer-list/customer.component';
 
 @NgModule({
 	imports: [CommonModule, SharedModule],
