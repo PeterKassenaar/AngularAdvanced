@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {ExtraOptions, RouterModule, Routes} from '@angular/router';
-import {MyCustomPreloader} from './app.routing.loader';
+import {MyCustomPreloader} from './loader.service';
 
 // Note: no import from the various components. Only references to
 // the modules, containing the components
