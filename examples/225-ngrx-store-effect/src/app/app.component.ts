@@ -26,9 +26,9 @@ export class AppComponent implements OnInit {
     this.store.dispatch(LoadCitiesViaEffect());
   }
 
-  // load initial cities on mouseclick
+  // IF: load initial cities on mouseclick
   loadCities() {
-    this.cityService.loadCities();
+    this.store.dispatch(LoadCitiesViaEffect());
   }
 
   // Remove city from store
