@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, Input, OnInit} from '@angular/core';
 import {Person} from '../model/person.interface';
 
 @Component({
@@ -7,14 +7,16 @@ import {Person} from '../model/person.interface';
     styleUrls: ['./person-detail.component.css'],
     // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PersonDetailComponent implements OnInit {
+export class PersonDetailComponent implements DoCheck {
     @Input() person: Person;
 
-    // constructor(private cd: ChangeDetectorRef){} // Uncomment to inject ChangeDetectorRef
+    constructor(private cd: ChangeDetectorRef) {
+    } // Uncomment to inject ChangeDetectorRef
 
 
-    ngOnInit() {
-        // this.cd.markForCheck()
+    ngDoCheck() {
+        // console.log('PersonDetailComponent :: Change detector ran (EVEN if NOTHING needs to be updated)');
+        // this.cd.markForCheck();
     }
 
 }

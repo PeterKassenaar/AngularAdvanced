@@ -8,27 +8,28 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, Input} f
 import {Person} from '../model/person.interface';
 
 @Component({
-  selector: 'app-person',
-  templateUrl: './person.component.html',
-  styles:[
-      `.person-component{
-      border: 2px solid red;
-      padding: 10px;
-    }`
-  ],
-  // changeDetection: ChangeDetectionStrategy.OnPush // uncomment this line to run only Change Detecion when input changes
+    selector: 'app-person',
+    templateUrl: './person.component.html',
+    styles: [
+        `.person-component {
+            border: 2px solid red;
+            padding: 10px;
+        }`
+    ],
+    // changeDetection: ChangeDetectionStrategy.OnPush // uncomment this line to run only Change Detecion when input changes
 })
 
 export class PersonComponent implements DoCheck {
 
-  @Input() person: Person;
+    @Input() person: Person;
 
-  constructor(private cd: ChangeDetectorRef){} // Uncomment to inject ChangeDetectorRef
+    constructor(private cd: ChangeDetectorRef) {
+    } // Uncomment to inject ChangeDetectorRef
 
-  ngDoCheck() {
-    console.log('PersonComponent :: Change detector ran');
-    // this.cd.markForCheck(); // Uncomment this line to run Change Detector for *this particular component* again.
-    // See https://angular.io/guide/lifecycle-hooks for more information on Lifecycle hooks like doCheck().
-  }
+    ngDoCheck() {
+        // console.log('PersonComponent :: Change detector ran');
+        // this.cd.markForCheck(); // Uncomment this line to run Change Detector for *this particular component* again.
+        // See https://angular.io/guide/lifecycle-hooks for more information on Lifecycle hooks like doCheck().
+    }
 
 }
