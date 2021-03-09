@@ -8,13 +8,13 @@ export const initialState = 0;
 // Internal variable/function with reducers. It receives a state from
 // the actual (exported) counterReducer below
 const reducer = createReducer(initialState,
-  on(increment, state => state + 1),
+  on(increment, state => state + 1), // immutable
   on(decrement, state => state - 1),
   on(reset, state => 0)
 );
 
 // The exported reducer function is necessary
 // as function calls are not supported by the AOT compiler.
-export const counterReducer = (state = 0, action: Action) => {
+export function counterReducer(state = initialState, action: Action) {
   return reducer(state, action);
-};
+}

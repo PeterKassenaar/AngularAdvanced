@@ -14,8 +14,8 @@ const reducer = createReducer(
   // TODO: Workshop: add extra reducers for updating and adding new cities.
 );
 
-export const citiesReducer = (
+export function citiesReducer(
   state: City[] | undefined,
-  action: Action) => {
+  action: Action) {
   return reducer(state, action);
-};
+}
