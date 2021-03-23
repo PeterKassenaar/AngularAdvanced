@@ -14,7 +14,7 @@
   <ul class="list-group">
     <li class="list-group-item"
         *ngFor="let city of cities$ | async">
-      <a (click)="editCity(city)">{{city | json }}</a>
+      {{city | json }}
       <button (click)="updateCity(city)"
               class="btn btn-sm btn-info pull-right">
         Update
