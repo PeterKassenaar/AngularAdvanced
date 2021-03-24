@@ -4,10 +4,10 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {CityService} from '../shared/services/city.service';
-import {catchError, map, mergeMap, tap} from 'rxjs/operators';
+import {catchError, map, mergeMap} from 'rxjs/operators';
 import {of} from 'rxjs';
 import {City} from '../shared/models/city.model';
-import {loadCitiesSuccess, LoadCitiesViaEffect, loadCitiesFail} from './cities.actions';
+import {loadCitiesFail, loadCitiesSuccess, LoadCitiesViaEffect} from './cities.actions';
 
 @Injectable()
 export class CitiesEffects {
@@ -26,4 +26,6 @@ export class CitiesEffects {
         );
     })
   ));
+
+  // workshop - add removeCity$
 }
