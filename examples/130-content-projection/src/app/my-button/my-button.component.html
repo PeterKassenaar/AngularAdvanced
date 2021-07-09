@@ -1,4 +1,10 @@
 <button class="my-button">
     <ng-content select="img"></ng-content>
-    <ng-content></ng-content>
+    <!-- wrap the ng-content block with a local default template variable -->
+    <span #ref><ng-content></ng-content></span>
+    <!--    Check if there is content available,
+            otherwise show default text-->
+    <ng-container *ngIf="!ref.hasChildNodes()">
+        Button text here
+    </ng-container>
 </button>
