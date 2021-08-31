@@ -78,6 +78,9 @@ These were used during the training, I find them useful.
 
 ## Various
 - Is NPM safe? : https://medium.com/hackernoon/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5
-
+- Jurgen van de Moere: Why you should never use function calls in Angular template expressions. https://medium.com/showpad-engineering/why-you-should-never-use-function-calls-in-angular-template-expressions-e1a50f9c0496
+- Martin Splitt on how google handles JavaScript sites: https://www.youtube.com/watch?v=LXF8bM4g-J4 (check the complete series!)
+- Andre Staltz on creating observables from scratch: https://www.youtube.com/watch?v=uQ1zhJHclvs
+- On using `module.forRoot(...)` function. https://medium.com/slackernoon/when-to-use-angulars-forroot-method-400094a0ebb7
 
 -- Questions, updates? Mail me at info@kassenaar.com
