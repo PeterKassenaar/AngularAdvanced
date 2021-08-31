@@ -31,6 +31,7 @@ These were used during the training, I find them useful.
 - Angular Change Detection Explained (Thoughtram)
   - https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
 - Understanding Change Detection in Angular (Alligator.io) - https://alligator.io/angular/change-detection-strategy/
+- Pitfalls in Change Detection: https://blog.angular-university.io/onpush-change-detection-how-it-works/
 
 ## On testing
 
@@ -38,6 +39,12 @@ These were used during the training, I find them useful.
 - Testing basics - introduction
   blog: https://medium.com/javascript-in-plain-english/unit-testing-in-angular-basics-part-1-329304813dc3
 - More extensive blog: https://www.digitalocean.com/community/tutorials/testing-angular-with-jasmine-and-karma-part-1
+
+## Design Patterns
+- Generic JavaScript Design Patterns, by Addy Osmani: https://addyosmani.com/resources/essentialjsdesignpatterns/book/ 
+- AND/OR (a little bit more modern): https://dev.to/zeeshanhshaheen/design-patterns-in-javascript-1pgm
+- Specific Angular Design Patterns book: https://www.amazon.co.uk/Angular-Design-Patterns-Implement-patterns/dp/1786461722/
+- Java Design Patterns: https://refactoring.guru/design-patterns/java
 
 ## Angular vs. Vue vs. React
 
@@ -67,7 +74,10 @@ These were used during the training, I find them useful.
 - Pipes and Observables, the `async` pipe: https://toddmotto.com/angular-ngif-async-pipe
 - How to avoid memory leaks from
   subscriptions: https://medium.com/@sub.metu/angular-how-to-avoid-memory-leaks-from-subscriptions-8fa925003aa9
-- Observables in Angular
-  - https://blog.thoughtram.io/angular/2016/01/06/taking-advantage-of-observables-in-angular2.html
+- Observables in Angular: https://blog.thoughtram.io/angular/2016/01/06/taking-advantage-of-observables-in-angular2.html
+
+## Various
+- Is NPM safe? : https://medium.com/hackernoon/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5
+
 
 -- Questions, updates? Mail me at info@kassenaar.com
