@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lazy-loading": {
+    "multiple-modules": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,12 +16,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/lazy-loading",
+            "outputPath": "dist/multiple-modules",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -63,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "lazy-loading:build"
+            "browserTarget": "multiple-modules:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "lazy-loading:build:production"
+              "browserTarget": "multiple-modules:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "lazy-loading:build"
+            "browserTarget": "multiple-modules:build"
           }
         },
         "test": {
@@ -111,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "lazy-loading:serve"
+            "devServerTarget": "multiple-modules:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "lazy-loading:serve:production"
+              "devServerTarget": "multiple-modules:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "lazy-loading"
+  "defaultProject": "multiple-modules"
 }
