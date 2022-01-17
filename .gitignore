@@ -1,6 +1,7 @@
 # Editor specific stuff
 .vscode
 .idea
+.angular
 
 # Logs
 logs
