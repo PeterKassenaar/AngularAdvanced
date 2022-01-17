@@ -10,7 +10,8 @@ export class AppComponent implements OnInit {
 	constructor(private router: Router) {}
 
 	ngOnInit() {
-		// 1a. subscribing to router events
+		// 1a. subscribing to router events, now we DON'T need the EnableTracing:true flag,
+    // because we handle the events ourselves.
 		// this.router.events.subscribe(event => {
 		// 	console.log(event);
 		// });
