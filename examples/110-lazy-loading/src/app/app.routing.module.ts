@@ -3,6 +3,7 @@ import {ExtraOptions, PreloadAllModules, RouterModule, Routes} from '@angular/ro
 // Note: no import from the various components. Only references to
 // the modules, containing the components
 const routes: Routes = [
+  // {path:'login', component:LoginComponent}
   {path: '', redirectTo: 'customers', pathMatch: 'full'},
   // New notation for lazy loading (Angular 8+):
   {
@@ -20,9 +21,10 @@ const routes: Routes = [
   //   {path: 'products', loadChildren: './products/products.module#ProductsModule'},
 ];
 
+// using the config variable a little bit later on...
 const config: ExtraOptions = {
   useHash: false,
   enableTracing: false, // turn on for console.logging of routing events
   // preloadingStrategy: PreloadAllModules // uncomment to load all modules lazily
 };
-export const AppRoutingModule = RouterModule.forRoot(routes, config);
+export const AppRoutingModule = RouterModule.forRoot(routes);
