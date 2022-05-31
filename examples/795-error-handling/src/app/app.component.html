@@ -1,0 +1,15 @@
+<mat-toolbar color="primary"> Angular Exception Handling</mat-toolbar>
+
+<div class="content-container">
+  <p>Also see the readme.md of this project</p>
+  <button mat-raised-button (click)="localError()">
+    Local front end error
+  </button>
+  <button mat-raised-button (click)="failingRequest()">
+    Server request with error (timeout 2 seconds)
+  </button>
+  <button mat-raised-button (click)="successfulRequest()">
+    Successful request showing loading spinner (timeout 2 seconds)
+  </button>
+  <pre *ngIf="response">Response: <br>{{ response |async | json}}</pre>
+</div>

@@ -1,0 +1,10 @@
+/* Some custom styles to show buttons in a column in the container */
+.content-container {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.content-container  button {
+  margin-top: 1rem;
+}
+

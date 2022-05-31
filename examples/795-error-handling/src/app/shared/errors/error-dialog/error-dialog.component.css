@@ -1,0 +1,8 @@
+/* Scoped error message style */
+.error-message {
+  background: #ff4747;
+  color: whitesmoke;
+  padding: 1rem;
+  font-family: monospace;
+  word-break: break-all;
+}
