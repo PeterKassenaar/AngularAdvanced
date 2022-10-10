@@ -1,0 +1,104 @@
+<h4>Playlist Component</h4>
+<form [formGroup]="playlist">
+  <!--  Static fields in the form, formatted with Bootstrap Classes
+        See https://getbootstrap.com/docs/5.2/forms/form-control/ for details
+
+        For training purposes everything is in this single control. In real life
+        you would want to split this out over multiple controls, following
+        the Smart/View component pattern.
+        -->
+  <div class="row mb-3">
+    <label for="staticTitle"
+           class="col-sm-3 col-form-label">
+      Title *
+    </label>
+    <div class="col-sm-9">
+      <input id="staticTitle"
+             type="text"
+             class="form-control"
+             placeholder="Playlist title"
+             formControlName="title">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="staticDate" class="col-sm-3 col-form-label">
+      Date *
+    </label>
+    <div class="col-sm-9">
+      <input id="staticDate"
+             class="form-control"
+             type="date"
+             placeholder="date"
+             formControlName="date">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="staticDescription" class="col-sm-3 col-form-label">
+      Description
+    </label>
+    <div class="col-sm-9">
+      <input id="staticDescription"
+             class="form-control"
+             type="text"
+             placeholder="Description"
+             formControlName="description">
+    </div>
+  </div>
+
+  <!--  Dynamic fields in the form, in an array-->
+  <ng-container formArrayName="songs">
+
+    <hr>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Artist</th>
+        <th>Title</th>
+        <th>Duration</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let songForm of songs.controls; let i = index">
+        <tr [formGroupName]="i">
+          <td>
+            <input type="text" class="form-control" formControlName="artist" placeholder="artist">
+          </td>
+          <td>
+            <input type="text" class="form-control" formControlName="title" placeholder="title">
+          </td>
+          <td>
+            <input type="text" class="form-control" formControlName="duration" placeholder="duration">
+          </td>
+          <td>
+            <button class="btn btn-danger"
+                    title="Delete this song"
+                    (click)="deleteSong(i)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </ng-container>
+</form>
+<button class="btn btn-info" (click)="addSong()">
+  <i class="fa fa-add"></i>
+  Add Song
+</button>
+<hr>
+<p>
+  <button class="btn btn-success"
+          [disabled]="!playlist.valid"
+          (click)="save()">
+    <i class="fa fa-floppy-disk"></i>
+    Save Playlist
+  </button>
+</p>
+<div *ngIf="playlistRaw">
+  <p>TODO: Post to database, playlist:</p>
+  <pre>
+{{playlistRaw | json }}
+</pre>
+</div>
