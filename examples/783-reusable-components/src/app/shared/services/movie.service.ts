@@ -1,5 +1,7 @@
 // movie.service.ts - a generic service for
-// talking to the OMDb API - fetching movie information by keyword
+// talking to the OMDb API - fetching movie information by keyword.
+// More information: http://www.omdbapi.com/.
+
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Movie, MovieInfo} from "../models/movie.interface";
@@ -25,7 +27,8 @@ export class MovieService {
       );
   }
 
-  // For now: static data:
+  // Use the Mock data below if you don't have access to http/internet/API
+  // In that case, in the component, use movieService.getMovies();
   private readonly MOVIE_DATA: MovieInfo =
     {
       "Search": [{

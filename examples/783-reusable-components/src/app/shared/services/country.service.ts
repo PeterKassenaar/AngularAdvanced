@@ -1,6 +1,5 @@
-// country service - fetching country information from
-// movie.service.ts - a generic service for
-// talking to the OMDb API - fetching movie information by keyword
+// country service - fetching country information from REST Countries API
+// See https://restcountries.com/#rest-countries for more information
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of} from "rxjs";
@@ -23,6 +22,8 @@ export class CountryService {
     return this.http.get<Country[]>(`${this.url}${keyword}`);
   }
 
+  // Use the Mock data below if you don't have access to http/internet/API
+  // In that case, in the component, use countryService.getCountries();
   private readonly COUNTRY_DATA: Country[] =
     [
       {
