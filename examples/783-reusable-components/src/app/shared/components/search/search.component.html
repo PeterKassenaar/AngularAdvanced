@@ -1,0 +1,18 @@
+<!--A generic search component. It emits the keyword given-->
+<div class="row mb-3">
+  <div class="col-md-9">
+    <input type="text"
+           #keyword
+           (keyup.enter)="search.emit(keyword.value)"
+           class="form-control"
+           placeholder="Keyword...">
+  </div>
+  <div class="col-md-3">
+    <button
+      class="btn btn-primary"
+      (click)="search.emit(keyword.value)">
+      <i class="fa fa-search prefix"></i>
+      Search
+    </button>
+  </div>
+</div>

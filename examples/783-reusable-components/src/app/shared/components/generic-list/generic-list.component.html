@@ -1,0 +1,14 @@
+<div>
+  <!--  This is the generic template for the dynamic template component.-->
+  <!--  Place content that is similar for *every* component outside the-->
+  <!--  ng-container-->
+  <div *ngFor="let item of items">
+    <!--    For instance, if we would want a checkbox next to each item, uncomment the following line.-->
+    <!--    Of course, the logic for the checkbox is NOT here yet ;-)-->
+    <!--    <input type="checkbox" name="chkResult">-->
+    <ng-container
+      [ngTemplateOutlet]="itemTemplateRef"
+      [ngTemplateOutletContext]="{ $implicit: item }"
+    ></ng-container>
+  </div>
+</div>

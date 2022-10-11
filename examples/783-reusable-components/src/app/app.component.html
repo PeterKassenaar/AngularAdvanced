@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Dynamic components</h2>
+  <p>In this app you can search for movies or for countries. In both
+    cases the same list component is used to display the results. However, it
+    uses a <code>GenericListComponent</code> to display the list and various
+    <code>*-template</code> components so the results can be shown in different ways.
+  </p>
+  <select class="form-select mb-3" [(ngModel)]="selected">
+    <option value="countries" selected>Search for: Countries</option>
+    <option value="movies">Search for: Movies</option>
+  </select>
+  <app-movie-list *ngIf="selected === 'movies'"></app-movie-list>
+  <app-country-list *ngIf="selected === 'countries'"></app-country-list>
+</div>

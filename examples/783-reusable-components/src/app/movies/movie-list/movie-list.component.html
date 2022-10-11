@@ -1,0 +1,10 @@
+<!--The shared search component-->
+<app-search (search)="getMovies($event)"></app-search>
+
+<!-- The Generic list component, it takes app-movie-template as its template-->
+<app-generic-list [items]="movie$ | async">
+  <ng-template #itemTemplate let-item>
+    <app-movie-template [movie]="item"></app-movie-template>
+  </ng-template>
+</app-generic-list>
+

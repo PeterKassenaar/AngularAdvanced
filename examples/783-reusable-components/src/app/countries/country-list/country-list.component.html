@@ -1,0 +1,10 @@
+<!--The shared search component-->
+<app-search (search)="getCountries($event)"></app-search>
+
+<!-- The Generic list component, it takes app-country-template as its template-->
+<app-generic-list [items]="country$ | async">
+  <ng-template #itemTemplate let-item>
+    <app-country-template [country]="item"></app-country-template>
+  </ng-template>
+</app-generic-list>
+
