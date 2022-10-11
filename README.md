@@ -12,7 +12,7 @@ Labs, exercises and example code on the training Angular Advanced by Peter Kasse
 - 6xx - Angular and 3rd party integration
 - 7xx - Miscellaneous concepts
 - 8xx - Change Detection
-- 9xx - Deprecated, used for older versions
+- 9xx - Deprecated, old stuff is moved here for your reference
 
 ## Some links that might be useful
 

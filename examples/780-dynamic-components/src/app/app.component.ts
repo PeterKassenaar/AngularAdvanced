@@ -7,57 +7,59 @@
 // - components with generic templates
 // - ...
 import {
-  Component,
-  ComponentFactory,
-  ComponentFactoryResolver,
-  ComponentRef,
-  ElementRef,
-  OnDestroy,
-  ViewChild,
-  ViewContainerRef
+    Component,
+    ComponentFactory,
+    ComponentFactoryResolver,
+    ComponentRef,
+    ElementRef,
+    OnDestroy,
+    ViewChild,
+    ViewContainerRef
 } from '@angular/core';
 
 // import the skeleton for our dynamic component
 import {AlertComponent} from './alert/alert.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
+    selector: 'app-root',
+    templateUrl: './app.component.html'
 })
-export class AppComponent implements OnDestroy {
-  // The default return from the ViewChild decorator is the component instance or the DOM element
-  // but in our case, we need to get the element as ViewContainerRef.
-  @ViewChild('alertContainer', {read: ViewContainerRef}) container;
-  @ViewChild('msg') msg: ElementRef;
-  componentRef: ComponentRef<AlertComponent>;
+export class AppComponent {
+    // The default return from the ViewChild decorator is the component instance or the DOM element
+    // but in our case, we need to get the element as ViewContainerRef.
+    @ViewChild('alertContainer', {read: ViewContainerRef}) container;
+    @ViewChild('msg') msg: ElementRef;
 
+    constructor(private resolver: ComponentFactoryResolver) {
+        // 1. The ComponentFactoryResolver service exposes one primary method, .resolveComponentFactory().
+        // 2. The .resolveComponentFactory() method takes a component and returns a ComponentFactory.
+        // 3. A ComponentFactory is an object that knows how to create components (hence, a 'Factory')
+    }
 
-  constructor(private resolver: ComponentFactoryResolver) {
-    // 1. The ComponentFactoryResolver service exposes one primary method, resolveComponentFactory.
-    // 2. The resolveComponentFactory() method takes a component and returns a ComponentFactory.
-    // 3. A ComponentFactory is an object that knows how to create components (hence, a 'Factory')
-  }
+    createComponent(type: string) {
+        // 1. clear current container, not neccessary if you want multiple components.
+        this.container.clear();
 
-  createComponent(type: string) {
-    this.container.clear(); // clear current container, not neccessary if you want multiple components
-    const factory: ComponentFactory<AlertComponent> = this.resolver.resolveComponentFactory(AlertComponent);
-    this.componentRef = this.container.createComponent(factory);
-    this.componentRef.instance.type = type; // get the type (success|danger) from the parameter
-    this.componentRef.instance.msg = this.msg.nativeElement.value; // read msg from the textbox
+        // 2. Create a factory (remember: the factory can create a component).
+        const factory: ComponentFactory<AlertComponent> = this.resolver.resolveComponentFactory(AlertComponent);
 
-    // The dynamic component exposes an @Output() EventEmitter that we can subscribe to
-    this.componentRef.instance.closed.subscribe(() => {
-      console.log('destroyed...');
-      this.componentRef.destroy();
-    });
+        // 3. Create the component using the factory, assign it to a reference variable componentRef.
+        const newComponentRef = this.container.createComponent(factory);
 
-    // Optionally - let the component destroy itself after a 2,5s delay
-    // setTimeout(() => {
-    //   this.componentRef.destroy(); // or do some fancy fadeout animation
-    // }, 2500);
-  }
+        // 4. Set its type and message
+        newComponentRef.instance.type = type;
+        newComponentRef.instance.msg = this.msg.nativeElement.value;
 
-  ngOnDestroy() {
-    this.componentRef.destroy();
-  }
+        // 5. The dynamic component exposes an @Output() EventEmitter that we can subscribe to
+        const sub = newComponentRef.instance.closed.subscribe(() => {
+            console.log('destroyed...');
+            sub.unsubscribe(); // unsubscribe() to prevent memoryleaks
+            newComponentRef.destroy();
+        });
+
+        // 6. Optionally - let the component destroy itself after a 2,5s delay
+        // setTimeout(() => {
+        //   newComponentRef.destroy(); // or do some fancy fadeout animation
+        // }, 2500);
+    }
 }

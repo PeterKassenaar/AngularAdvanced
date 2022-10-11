@@ -1,13 +1,13 @@
 <div class="container">
-  <h1>Dynamic Components example</h1>
-  <h2>Using ComponentFactory</h2>
-  <!--The Container to put the dynamic component-->
-  <ng-template #alertContainer></ng-template>
+    <h1>Dynamic Components example</h1>
+    <h2>Using ComponentFactory</h2>
+    <!-- The Container to place the dynamic component in -->
+    <ng-template #alertContainer></ng-template>
 
-  <hr>
-  <input type="text" #msg  placeholder="type a message..." class="form-control-lg">
-  <hr>
-  <button  class="btn btn-primary" (click)="createComponent('success')">Create Success Component</button>&nbsp;
-  <button  class="btn btn-primary" (click)="createComponent('danger')">Create Danger Component</button>&nbsp;
-  <button  class="btn btn-primary" (click)="createComponent('warning')">Create Warning Component</button>&nbsp;
+    <hr>
+    <input type="text" #msg placeholder="type a message..." class="form-control-lg">
+    <hr>
+    <button class="btn btn-primary" (click)="createComponent('success')">Create Success Component</button>&nbsp;
+    <button class="btn btn-primary" (click)="createComponent('danger')">Create Danger Component</button>&nbsp;
+    <button class="btn btn-primary" (click)="createComponent('warning')">Create Warning Component</button>&nbsp;
 </div>
