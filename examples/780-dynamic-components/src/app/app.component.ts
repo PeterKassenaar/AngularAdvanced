@@ -10,15 +10,16 @@ import {
     Component,
     ComponentFactory,
     ComponentFactoryResolver,
-    ComponentRef,
     ElementRef,
-    OnDestroy,
     ViewChild,
     ViewContainerRef
 } from '@angular/core';
 
 // import the skeleton for our dynamic component
 import {AlertComponent} from './alert/alert.component';
+
+// The types of messages that we accept (see createComponent() further down).
+type msgType = 'success' | 'danger' | 'warning';
 
 @Component({
     selector: 'app-root',
@@ -30,13 +31,14 @@ export class AppComponent {
     @ViewChild('alertContainer', {read: ViewContainerRef}) container;
     @ViewChild('msg') msg: ElementRef;
 
+
     constructor(private resolver: ComponentFactoryResolver) {
         // 1. The ComponentFactoryResolver service exposes one primary method, .resolveComponentFactory().
         // 2. The .resolveComponentFactory() method takes a component and returns a ComponentFactory.
         // 3. A ComponentFactory is an object that knows how to create components (hence, a 'Factory')
     }
 
-    createComponent(type: string) {
+    createComponent(type: msgType = 'success') {
         // 1. clear current container, not neccessary if you want multiple components.
         this.container.clear();
 
@@ -57,7 +59,7 @@ export class AppComponent {
             newComponentRef.destroy();
         });
 
-        // 6. Optionally - let the component destroy itself after a 2,5s delay
+        // 6. Optional - let the component destroy itself after a 2,5s delay
         // setTimeout(() => {
         //   newComponentRef.destroy(); // or do some fancy fadeout animation
         // }, 2500);

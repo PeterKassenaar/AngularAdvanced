@@ -11,6 +11,8 @@ export class MovieListComponent {
 
   movie$! :Observable<Movie[]>
   constructor(private movieService : MovieService) {
+    // If you don't have access to API/internet, uncomment the following line.
+    // It wil then use mock data from the service.
     // this.movie$ = this.movieService.getMovies();
   }
 

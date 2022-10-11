@@ -10,8 +10,8 @@ export class GenericListComponent {
   // can be of any kind, or they can be null.
   @Input() items!: unknown[] | null;
 
-  // Refence to the ng-container in the template
+  // Refence to the template passed in into this GenericList
   @ContentChild('itemTemplate', {static: false})
-  itemTemplateRef!: TemplateRef<any>;
+  itemTemplateRef!: TemplateRef<unknown>;
 
 }
