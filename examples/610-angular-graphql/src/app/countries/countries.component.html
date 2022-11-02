@@ -1,0 +1,71 @@
+<h3>List of countries via GraphQL Countries</h3>
+<p>More information on API: <a href="https://graphql.country/#graphql-country"
+                               target="_blank">https://graphql.country/</a></p>
+<!--  If there is an error (most likely: server-sided) it is displayed here-->
+<div *ngIf="error" class="alert alert-danger">
+  <p>Error: {{ error }}</p>
+</div>
+
+<!--Results-->
+<div class="row">
+  <div class="col-md-6">
+
+    <!--    Our simple search form-->
+    <form [formGroup]="searchForm">
+      <input type="text"
+             class="form-control"
+             formControlName="name"
+             placeholder="(Part of) country name">
+      <input type="checkbox"
+             formControlName="includeFlag"
+             id="includeFlag">
+      <label for="includeFlag">
+        Include flag
+      </label>
+      <p *ngIf="keyword">
+        Results for: <strong>{{ keyword }}</strong>
+      </p>
+      <button
+        *ngIf="countries.length > 0 "
+        class="btn btn-outline-success"
+        (click)="clearForm()">
+        Clear
+      </button>
+    </form>
+    <!--    Displaying the results-->
+    <div class="card" *ngFor="let country of countries">
+      <div class="card-header">
+        <strong>{{ country.node.name}}</strong>
+        <button class="btn btn-outline-primary btn-sm float-end"
+                (click)="getCountryDetails(country.node.name)">
+          Details
+        </button>
+      </div>
+      <div class="card-body">
+        <!--        Show flag if the checkbox is selected. Otherwise don't render <img> tag -->
+        <img *ngIf="country.node.flag" class="img-thumbnail" [src]="country.node.flag" alt="Flag">
+        <p>Capital: {{ country.node.capital}}</p>
+        <p>Language<span *ngIf="country.node.languages.edges.length > 1">s</span>:</p>
+        <ul>
+          <li *ngFor="let language of country.node.languages.edges">
+            {{ language.node.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <!--    Loading indicator-->
+    <app-loading *ngIf="loading"></app-loading>
+    <!--    Country Details-->
+    <div *ngIf="countryDetail">
+      <h3>
+        Details for: {{ countryDetail.name}}
+      </h3>
+      <img [src]="countryDetail.flag" class="img-fluid" [alt]="'Flag of' + countryDetail.name ">
+      <p>Capital: <em>{{ countryDetail.capital}}</em></p>
+      <p>Population: <strong>{{countryDetail.population}}</strong></p>
+      <p>Region: <strong>{{countryDetail.region}}, {{countryDetail.subregion}}</strong></p>
+    </div>
+  </div>
+</div>
