@@ -1,6 +1,6 @@
 // store.ts
 import {BehaviorSubject, Observable} from 'rxjs';
-import {distinctUntilChanged, pluck, tap} from 'rxjs/operators';
+import {distinctUntilChanged, pluck} from 'rxjs/operators';
 
 // custom interface and implementation
 import {State, Todo} from './state';
@@ -41,7 +41,7 @@ export class Store {
   // Generic type <T>
   select<T>(name: string): Observable<T> {
     return this.store.pipe(
-      // operator 'pluck'
+      // operator 'pluck'. More info: https://www.learnrxjs.io/learn-rxjs/operators/transformation/pluck
       pluck(name),
     );
   }
