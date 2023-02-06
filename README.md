@@ -76,6 +76,10 @@ These were used during the training, I find them useful.
   subscriptions: https://medium.com/@sub.metu/angular-how-to-avoid-memory-leaks-from-subscriptions-8fa925003aa9
 - Observables in Angular: https://blog.thoughtram.io/angular/2016/01/06/taking-advantage-of-observables-in-angular2.html
 
+### Standalone components
+- Read the excellent series of articles by Manfred Steyer GDE, on this topic: https://www.angulararchitects.io/aktuelles/angulars-future-without-ngmodules-lightweight-solutions-on-top-of-standalone-components/
+
+
 ## Various
 - Is NPM safe? : https://medium.com/hackernoon/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5
 - Jurgen van de Moere: Why you should never use function calls in Angular template expressions. https://medium.com/showpad-engineering/why-you-should-never-use-function-calls-in-angular-template-expressions-e1a50f9c0496
