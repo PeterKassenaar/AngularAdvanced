@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>List of customers (coming from a service)</h2>
+      <ul class="list-group">
+        <li *ngFor="let customer of customers"
+            class="list-group-item" (click)="onSelect(customer)">
+          {{customer}}
+        </li>
+      </ul>
+      <button (click)="clear()" class="btn btn-success">Clear</button>
+      <p>
+        Click a customer to see its details in (another) standalone component.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <app-customer-detail
+        *ngIf="selectedCustomer"
+        [customer]="selectedCustomer">
+      </app-customer-detail>
+    </div>
+  </div>
+</div>

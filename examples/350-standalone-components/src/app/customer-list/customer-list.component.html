@@ -1,0 +1,8 @@
+<h2>List of customers</h2>
+<ul class="list-group">
+  <li *ngFor="let customer of customers"
+    class="list-group-item" (click)="select.emit(customer)">
+    {{customer}}
+  </li>
+</ul>
+Click a customer to see its details in (another) standalone component.
