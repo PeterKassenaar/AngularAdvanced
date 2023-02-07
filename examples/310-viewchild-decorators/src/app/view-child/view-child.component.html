@@ -1,0 +1,24 @@
+<div class="col-md-6">
+
+  <code>
+    <p>A simple heading. It has a local template variable (hashtag), so
+    we can fetch it in the TypeScript of this component and work with it programmatically.
+    </p>
+    <p>We use an @ViewChild decorator of type ElementRef for that:</p>
+  </code>
+  <h2 #heading>Decorator <code>@ViewChild</code>: a list of customers</h2>
+
+  <code>
+  Below is the component app-customer-detail inside an *ngFor. So it appears 4 times.
+    It is fetched in the TypeScript. Once again we use the @ViewChild decorator, this
+    time of type AppCustomerDetail (so, the component itself). We then have access *in this component*
+    to the properties and possible methods of AppCustomerDetail Component.
+  </code>
+  <app-customer-detail
+    *ngFor="let customer of customers"
+    [customer]="customer"></app-customer-detail>
+
+  <button class="btn btn-outline-primary" (click)="showFirstCustomer()">Get first customer via @ViewChild</button>
+  <button class="btn btn-outline-primary" (click)="toggleColor()">Change color of heading via @ViewChild</button>
+  <h3 *ngIf="firstCustomer">First customer: {{ firstCustomer}}</h3>
+</div>

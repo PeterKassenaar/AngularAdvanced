@@ -1,0 +1,23 @@
+<div class="col-md-6">
+
+  <h2>Decorator <code>@ViewChildren</code>: a list of customers</h2>
+
+  <code>
+    Below is the component app-customer-detail inside an *ngFor. So it appears 4 times.
+    It is fetched in the TypeScript. We now use the @ViewChildren decorator, this returns
+    a list of matches. In this case a QueryList&lt;CustomerDetailComponent&gt;.
+  </code>
+  <app-customer-detail
+    *ngFor="let customer of customers"
+    [customer]="customer"></app-customer-detail>
+
+  <button class="btn btn-outline-primary" (click)="showCustomers()">Get all customers via @ViewChildren</button>
+  <button class="btn btn-outline-primary" (click)="clear()">Clear</button>
+  <h2 *ngIf="allCustomers.length>0">{{allCustomers | json}}</h2>
+  <hr>
+  <code>More information: <a
+    href="https://www.tektutorialshub.com/angular/understanding-viewchild-viewchildren-querylist-in-angular/">
+    https://www.tektutorialshub.com/angular/understanding-viewchild-viewchildren-querylist-in-angular/
+  </a>
+  </code>
+</div>

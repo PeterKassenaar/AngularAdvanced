@@ -1,0 +1,23 @@
+<h2>Decorator <code>@HostBinding</code></h2>
+<p>
+  No time for example, but this might help:
+</p>
+<hr>
+<pre>
+A quick tip that helps me remember what they do -
+
+HostBinding('value') myValue; is exactly the same as [value]="myValue"
+
+And
+
+HostListener('click') myClick(){{"{"}} } is exactly the same as (click)="myClick()"
+
+HostBinding and HostListener are written in directives and the other ones (...) and [..] are written inside templates (of components).
+</pre>
+<hr>
+<code>
+  More information: <a
+  href="https://stackoverflow.com/questions/37965647/hostbinding-and-hostlistener-what-do-they-do-and-what-are-they-for">
+  https://stackoverflow.com/questions/37965647/hostbinding-and-hostlistener-what-do-they-do-and-what-are-they-for
+</a>
+</code>
