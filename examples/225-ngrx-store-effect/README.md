@@ -1,4 +1,15 @@
-# StoreCities
+# StoreCities / Effects
+
+# Note: this project DOES NOT work with Node.js 18.x and above. Please use Node.js 16.x or lower.
+
+The Project is here for your reference.
+
+## Running
+- To start the project, FIRST start a simple `json-server` server, that provides an API.
+  - `npm run json-server`
+- Then, start the client project as usual on `http://localhost:4200`
+  - `npm run start`
+- See `/store/cities.effects.ts` for example of an @effect and how it is used in the application.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
