@@ -1,5 +1,9 @@
 # StoreCounter
 
+# Note: this project DOES NOT work with Node.js 18.x and above. Please use Node.js 16.x or lower.
+
+It is here for your reference.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
 ## Development server
