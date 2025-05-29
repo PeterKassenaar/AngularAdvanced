@@ -3,6 +3,15 @@
 import {createAction, props} from '@ngrx/store';
 import {City} from '../shared/models/city.model';
 
+// 0. Loading state actions - to show a spinner or loading message
+export const startLoading = createAction(
+  'CITIES - Start loading'
+);
+
+export const endLoading = createAction(
+  'CITIES - End loading'
+);
+
 // 1. Load city via @ngrx/effects
 export const LoadCitiesViaEffect = createAction(
   'CITIES - load cities via Effect',
@@ -32,4 +41,3 @@ export const removeCity = createAction(
 );
 
 // TODO: create your own actions for editing/updating a city, etc.
-

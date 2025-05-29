@@ -10,8 +10,14 @@
          placeholder="new city..."
          class="form-control-lg"
          (keyup.enter)="addCity(newCity.value)">
+
+  <!-- Loading indicator -->
+  <div *ngIf="loading$ | async" class="alert alert-info mt-3">
+    Loading cities... Please wait.
+  </div>
+
   <!--List of current cities-->
-  <ul class="list-group">
+  <ul class="list-group" *ngIf="!(loading$ | async)">
     <li class="list-group-item"
         *ngFor="let city of cities$ | async">
       {{city | json }}

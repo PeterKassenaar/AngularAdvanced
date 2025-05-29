@@ -28,7 +28,6 @@ import {CitiesEffects} from './store/cities.effects';
     // Add the EffectsModule with an array of effects
     EffectsModule.forRoot([CitiesEffects])
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

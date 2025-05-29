@@ -7,7 +7,6 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {catchError, finalize, tap} from 'rxjs/operators';
 import {EMPTY} from 'rxjs';
 
-
 // Some stuff that our server (json-server) needs:
 const BASE_URL = 'http://localhost:3000/cities';
 const HEADERS = {
