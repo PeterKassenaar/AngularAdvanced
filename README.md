@@ -43,7 +43,7 @@ These were used during the training, I find them useful.
 ## Design Patterns
 - Generic JavaScript Design Patterns, by Addy Osmani: https://addyosmani.com/resources/essentialjsdesignpatterns/book/ 
 - AND/OR (a little bit more modern): https://dev.to/zeeshanhshaheen/design-patterns-in-javascript-1pgm
-- Specific Angular Design Patterns book: https://www.amazon.co.uk/Angular-Design-Patterns-Implement-patterns/dp/1786461722/
+- Specific Angular Design Patterns book: [https://www.amazon.co.uk/Angular-Design-Patterns-Implement-patterns/dp/1786461722/](https://www.amazon.co.uk/Angular-Design-Patterns-Best-Practices/dp/1837631972/ref=sr_1_1)
 - Java Design Patterns: https://refactoring.guru/design-patterns/java
 
 ## Angular vs. Vue vs. React
