@@ -1,0 +1,17 @@
+<div class="container my-3">
+  <h2>Very Big Component</h2>
+  <p>This `VeryBigComponent` with 500 lines of dummy text was added as a standalone component, and a custom preloading
+    strategy
+    was implemented. The routing in <code>app.routes.ts</code> was updated to include a lazy-loaded route for this
+    component, marked for
+    preloading.</p>
+  <p>Please also see <code>app.config.ts</code>, where <code>withPreloading</code> and
+    <code>selectivePreloadingStrategy</code> are now used.</p>
+
+  <h3>Some dummy 'big' data</h3>
+  <div>
+    <p *ngFor="let i of lines">Line {{ i }}: Lorem ipsum dolor sit amet.</p>
+  </div>
+</div>
+
+

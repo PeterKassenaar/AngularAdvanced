@@ -1,0 +1,13 @@
+.navbar .nav-link {
+  color: #e2e6ea;
+  border: 2px solid transparent; /* prevents layout shift when active */
+  border-radius: 4px;
+}
+
+.navbar .nav-link.active {
+  border-color: #ffffff;
+}
+
+.navbar .nav-link:hover {
+  color: #ffffff;
+}

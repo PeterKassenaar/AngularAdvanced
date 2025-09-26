@@ -1,10 +1,10 @@
 # Angular Advanced
 
-Labs, exercises and example code on the training Angular Advanced by Peter Kassenaar
+Labs, exercises and example code on the training Angular Advanced by Peter Kassenaar.
 
 ## Contents
 
-- 1xx - Modules and Routing
+- 1xx - Modules and Routing (now also with standalone components)
 - 2xx - @ngrx/store
 - 3xx - Advanced components
 - 4xx - Testing
