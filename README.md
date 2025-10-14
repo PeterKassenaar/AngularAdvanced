@@ -2,6 +2,9 @@
 
 Labs, exercises and example code on the training Angular Advanced by Peter Kassenaar.
 
+Disclaimer! The examples are not production ready, they are just for the training. Some use older versions of Node.js.
+They are NOT all updated to the latest version of Angular yet.
+
 ## Contents
 
 - 1xx - Modules and Routing (now also with standalone components)
@@ -29,7 +32,7 @@ These were used during the training, I find them useful.
 ## Change Detection
 
 - Angular Change Detection Explained (Thoughtram)
-  - https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
+    - https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
 - Understanding Change Detection in Angular (Alligator.io) - https://alligator.io/angular/change-detection-strategy/
 - Pitfalls in Change Detection: https://blog.angular-university.io/onpush-change-detection-how-it-works/
 
@@ -41,9 +44,11 @@ These were used during the training, I find them useful.
 - More extensive blog: https://www.digitalocean.com/community/tutorials/testing-angular-with-jasmine-and-karma-part-1
 
 ## Design Patterns
-- Generic JavaScript Design Patterns, by Addy Osmani: https://addyosmani.com/resources/essentialjsdesignpatterns/book/ 
+
+- Generic JavaScript Design Patterns, by Addy Osmani: https://addyosmani.com/resources/essentialjsdesignpatterns/book/
 - AND/OR (a little bit more modern): https://dev.to/zeeshanhshaheen/design-patterns-in-javascript-1pgm
-- Specific Angular Design Patterns book: [https://www.amazon.co.uk/Angular-Design-Patterns-Implement-patterns/dp/1786461722/](https://www.amazon.co.uk/Angular-Design-Patterns-Best-Practices/dp/1837631972/ref=sr_1_1)
+- Specific Angular Design Patterns
+  book: [https://www.amazon.co.uk/Angular-Design-Patterns-Implement-patterns/dp/1786461722/](https://www.amazon.co.uk/Angular-Design-Patterns-Best-Practices/dp/1837631972/ref=sr_1_1)
 - Java Design Patterns: https://refactoring.guru/design-patterns/java
 
 ## Angular vs. Vue vs. React
@@ -77,14 +82,20 @@ These were used during the training, I find them useful.
 - Observables in Angular: https://blog.thoughtram.io/angular/2016/01/06/taking-advantage-of-observables-in-angular2.html
 
 ### Standalone components
-- Read the excellent series of articles by Manfred Steyer GDE, on this topic: https://www.angulararchitects.io/aktuelles/angulars-future-without-ngmodules-lightweight-solutions-on-top-of-standalone-components/
 
+- Read the excellent series of articles by Manfred Steyer GDE, on this
+  topic: https://www.angulararchitects.io/aktuelles/angulars-future-without-ngmodules-lightweight-solutions-on-top-of-standalone-components/
 
 ## Various
-- Is NPM safe? : https://medium.com/hackernoon/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5
-- Jurgen van de Moere: Why you should never use function calls in Angular template expressions. https://medium.com/showpad-engineering/why-you-should-never-use-function-calls-in-angular-template-expressions-e1a50f9c0496
-- Martin Splitt on how google handles JavaScript sites: https://www.youtube.com/watch?v=LXF8bM4g-J4 (check the complete series!)
+
+- Is NPM
+  safe? : https://medium.com/hackernoon/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5
+- Jurgen van de Moere: Why you should never use function calls in Angular template
+  expressions. https://medium.com/showpad-engineering/why-you-should-never-use-function-calls-in-angular-template-expressions-e1a50f9c0496
+- Martin Splitt on how google handles JavaScript sites: https://www.youtube.com/watch?v=LXF8bM4g-J4 (check the complete
+  series!)
 - Andre Staltz on creating observables from scratch: https://www.youtube.com/watch?v=uQ1zhJHclvs
-- On using `module.forRoot(...)` function. https://medium.com/slackernoon/when-to-use-angulars-forroot-method-400094a0ebb7
+- On using `module.forRoot(...)`
+  function. https://medium.com/slackernoon/when-to-use-angulars-forroot-method-400094a0ebb7
 
 -- Questions, updates? Mail me at info@kassenaar.com
