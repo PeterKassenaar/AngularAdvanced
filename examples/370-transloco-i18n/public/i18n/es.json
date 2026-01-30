@@ -1,0 +1,12 @@
+{
+  "hello": "Hola, {{title}}",
+  "congrats": "¡Felicidades! Tu aplicación está funcionando. 🎉",
+  "links": {
+    "explore": "Explora los Documentos",
+    "tutorials": "Aprende con Tutoriales",
+    "ai": "Prompts y mejores prácticas para IA",
+    "cli": "Documentación de la CLI",
+    "language": "Servicio de Lenguaje de Angular",
+    "devtools": "Angular DevTools"
+  }
+}
