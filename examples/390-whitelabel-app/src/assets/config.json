@@ -1,0 +1,9 @@
+{
+  "customer": "acme",
+  "validCustomers": ["acme", "contoso"],
+  "features": {
+    "apiUrl": "https://api.test.com",
+    "featureX": true,
+    "featureY": false
+  }
+}
