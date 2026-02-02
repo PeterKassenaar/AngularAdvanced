@@ -1,0 +1,19 @@
+<h2>Runtime config usage</h2>
+
+<p><strong>API base URL:</strong> {{ apiBaseUrl }}</p>
+
+@if (featureXEnabled) {
+  <button (click)="loadData()">
+    Dummy(!) Load data: Feature X from config file
+  </button>
+  <div>
+    (see what happens when you change <code>FeatureX: true</code> to <code>false</code>
+    in <code>assets/config.json</code>)
+  </div>
+
+  @if (data) {
+    <pre>{{ data | json }}</pre>
+  }
+} @else {
+  <p class="muted">Feature X is disabled</p>
+}

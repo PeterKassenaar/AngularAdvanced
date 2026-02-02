@@ -1,0 +1,5 @@
+{
+  "apiBaseUrl": "https://api.example.com",
+  "featureX": true,
+  "featureY": false
+}
