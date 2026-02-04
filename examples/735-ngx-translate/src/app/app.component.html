@@ -1,0 +1,13 @@
+<div>
+  <!--  There are NO 'hardcoded' UI-strings in the component anymore. All-->
+  <!--  strings are coming from the 'translations.json' file.-->
+  <h2>{{ 'title' | translate }}</h2>
+  <h1>{{ 'demo.heading' | translate }}</h1>
+  <p>{{ 'demo.text' | translate }}</p>
+  <p>{{ 'demo.url'| translate }} <code><a [href]="url">{{ url }}</a></code></p>
+  <button (click)="useLanguage('nl')">Nederlands</button>
+  <button (click)="useLanguage('en')">English</button>
+  <button (click)="useLanguage('de')">Deutsch</button>
+  <hr>
+  <p>{{ 'demo.footer' | translate }}</p>
+</div>

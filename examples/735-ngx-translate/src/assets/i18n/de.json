@@ -1,0 +1,12 @@
+{
+	"content": {
+		"menu": "Dies ist das menu"
+	},
+	"demo": {
+		"footer": "Copyright (C) - Peter Kassenaar, 2025 - alle Rechte vorbehalten",
+		"heading": "Demo ngx-translate (Übersetzungen)",
+		"text": "Diese Anwendung zeigt, wie eine Angular App mit ngx-translate einfach übersetzt werden kann.",
+		"url": "Das Tool BabelEdit wurde verwendet, um die Übersetzungen zu synchronisieren, verfügbar unter"
+	},
+	"title": "Dies ist der Titel der Anwendung"
+}

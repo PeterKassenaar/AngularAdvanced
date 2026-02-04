@@ -1,0 +1,25 @@
+<div>
+  <div class="lang-picker">
+    <div *ngFor="let locale of locales">
+      <a href="/{{ locale.localeCode }}/">
+        {{ locale.label }}
+      </a>
+    </div>
+  </div>
+
+  <p i18n="Simple message example@@message.simple">A simple message.</p>
+
+  <p i18n="Argument message example@@message.argument">Hi, {{ name }}! 👋</p>
+
+  <p i18n="Plural message example@@message.plural">{count, plural, one {{{count}} item} other {{{count}} items}}</p>
+
+  <p i18n="Gender message example@@message.gender">{gender, select, male {Mr {{ name }}} female {Mrs {{ name }}} other {Client {{ name }}}}</p>
+
+  <p i18n="Formatted number message example@@message.number-format">Formatted number: {{ amount | number : ".2" }}</p>
+
+  <p i18n="Formatted date message example@@message.date-format">Formatted date: {{ currentDate | date : "fullDate" }}</p>
+
+  <div>
+    <ng-container>{{ footerMessage }}</ng-container>
+  </div>
+</div>
