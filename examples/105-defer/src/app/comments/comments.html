@@ -1,0 +1,8 @@
+<h2>Defer demo. Some comments!</h2>
+
+@for (comment of comments; track comment.id) {
+  <div class="comment">
+    <h3>{{ comment.author }}</h3>
+    <p>{{ comment.text }}</p>
+  </div>
+}

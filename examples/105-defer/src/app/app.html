@@ -1,0 +1,12 @@
+<h2>Defer demo. See code for details</h2>
+<button (click)="show = true">
+  Show Commments
+</button>
+
+<!--Component is defered until show is true-->
+@defer (when show) {
+  <app-comments/>
+} @placeholder {
+  <!--  Placeholder text, shown when comments are not loaded yet.-->
+  <p>Commments not loaded yet.</p>
+}
