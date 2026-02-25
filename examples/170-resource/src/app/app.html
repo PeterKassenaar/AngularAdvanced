@@ -1,0 +1,38 @@
+<h1>Demo app on <code>resource()</code></h1>
+<div>
+Demo: fetching users from <code>https://jsonplaceholder.typicode.com/users</code>
+</div>
+<hr>
+<div>
+  <button (click)="reload()">
+    Reload Users
+  </button>
+
+  <hr />
+
+  <!-- Loading state -->
+  @if (users.isLoading()) {
+    <p>Loading users...</p>
+  }
+
+  <!-- Error state -->
+  @if (users.error()) {
+    <p style="color: red;">
+      Error loading users
+    </p>
+  }
+
+  <!-- Success state -->
+  @if (users.value(); as userList) {
+    <ul>
+      @for (user of userList; track user.id) {
+        <li>
+          <h3>{{ user.name }}</h3>
+          <p>{{ user.email }}</p>
+          <em>{{ user.company.name }}</em>
+          <hr>
+        </li>
+      }
+    </ul>
+  }
+</div>
