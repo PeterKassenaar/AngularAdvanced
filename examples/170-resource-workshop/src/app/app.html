@@ -1,0 +1,64 @@
+<div class="layout">
+  <div class="column left">
+    <!-- A list of all users -->
+    <h1>Users List</h1>
+
+    @if (users.isLoading()) {
+      <p>Loading users...</p>
+    }
+
+    @if (users.error()) {
+      <p style="color: red;">Error loading users</p>
+    }
+
+    <!-- Using an alias 'as userList' here, to shorten the rest of the notation -->
+    @if (users.value(); as userList) {
+      <ul class="user-list">
+        @for (user of userList; track user.id) {
+          <li
+            class="user-item"
+            [class.selected]="selectedUserId() === user.id"
+            (click)="selectUser(user.id)"
+          >
+            <h3>{{ user.name }}</h3>
+            <p>{{ user.email }}</p>
+          </li>
+        }
+      </ul>
+    }
+  </div>
+
+  <!--  Details of a fetched user-->
+  <div class="column right">
+    <h1>User Details</h1>
+
+    @if (selectedUserId() === null) {
+      <div class="placeholder-message">
+        Please select a user to see details.
+      </div>
+    } @else {
+      @if (userDetail.isLoading()) {
+        <p>Loading user details...</p>
+      }
+
+      @if (userDetail.error()) {
+        <p style="color: red;">Error loading user details.</p>
+      }
+
+      <!-- Using an alias 'as details' here, to shorten the rest of the notation -->
+      @if (userDetail.value(); as details) {
+        @if (details) {
+          <div class="detail-card">
+            <h2>{{ details.name }}</h2>
+            <p><strong>Username:</strong> {{ details.username }}</p>
+            <p><strong>Email:</strong> {{ details.email }}</p>
+            <p><strong>Phone:</strong> {{ details.phone }}</p>
+            <p><strong>Website:</strong> {{ details.website }}</p>
+            <p><strong>Company:</strong> {{ details.company.name }}</p>
+          </div>
+        }
+      }
+    }
+    <!--    Workshop: create a 'clear' button here, to reset the signal and NOT show a user anymore -->
+  </div>
+</div>
